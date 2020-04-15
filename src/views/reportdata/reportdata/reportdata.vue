@@ -816,7 +816,9 @@
 						}
                         this.listData = this.tableDataProcess(e.shareDailyResultTypes, percentage);
                         this.payList = e.payList;
-                        this.retentionDataList = this.saturday(e.shareRetentionList);
+						if(e.shareRetentionList.length > 0){
+							  this.retentionDataList = this.saturday(e.shareRetentionList);
+						}
                         this.datas = this.f2DI(e.dauNumOrInstallNumList, initData[this.data].toString(), this.listData, parseInt(this.dauOrInstall === '活跃' ? 0 : 1));
                         this.handelPayCount = this.makeCavas(this.listData, initData[this.data]);
                         this.chartData = this.makePieChart(e.androidIosProportions);
@@ -825,6 +827,7 @@
                         this.davChart.changeData(this.chartData);
                         this.installChart.changeData(this.chartData);
 						if(this.data == '7日'){
+							debugger
 						    this.realtimeStatis[0].value = e.weekStats.wdu
 						    this.realtimeStatis[1].value = e.weekStats.wnu
 						}
@@ -928,8 +931,7 @@
                         realtimeArray.push(realtimeObject3);
                         this.realtimeStatis = realtimeArray;
                     } else {
-                        debugger
-                        let realtimeArray = [];
+                        let realtimeArrayss = [];
                         let realtimeObject1 = new Object();
                         realtimeObject1.title = '活跃';
                         realtimeObject1.value = '';
@@ -948,13 +950,12 @@
                         realtimeObject3.payARPU = '';
                         realtimeObject3.payARPPU = '';
 
-                        realtimeArray.push(realtimeObject1);
-                        realtimeArray.push(realtimeObject2);
-                        realtimeArray.push(realtimeObject3);
-                        this.realtimeStatis = realtimeArray;
+                        realtimeArrayss.push(realtimeObject1);
+                        realtimeArrayss.push(realtimeObject2);
+                        realtimeArrayss.push(realtimeObject3);
+                        this.realtimeStatis = realtimeArrayss;
                     }
                 }else {
-                    debugger
                     let realtimeArrays = [];
                     let realtimeObject1 = new Object();
                     realtimeObject1.title = '活跃';
@@ -978,7 +979,6 @@
                     realtimeArray.push(realtimeObject2);
                     realtimeArray.push(realtimeObject3);
                     this.realtimeStatis = realtimeArrays;
-
                 }
                 return data;
             },
