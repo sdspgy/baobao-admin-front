@@ -88,7 +88,7 @@ export default {
 				height: 400
 			});
 			this.G2Device.source(this.chartDevice, {});
-			this.G2Device.coord();
+			// this.G2Device.coord();
 			// 坐标轴文本旋转
 			this.G2Device.axis('name', {
 				label: {
@@ -97,17 +97,17 @@ export default {
 					textBaseline: 'middle'
 				}
 			});
-			// this.G2Device.tooltip({
-			//     // showCrosshairs: true, //纵坐标线
-			//     // showItemMarker: false, //去小原点
-			//     onShow: function onShow(ev) {
-			//         const items = ev.items;
-			//         items[0].name = null;
-			//         items[0].name = items[0].title;
-			//         items[0].value = '' + items[0].value + ';' + items[0].origin.precentage + '%';
-			//     },
-			//     offsetX: -30
-			// });
+			this.G2Device.tooltip({
+			    // showCrosshairs: true, //纵坐标线
+			    showItemMarker: false, //去小原点
+			    onShow: function onShow(ev) {
+			        const items = ev.items;
+			        items[0].name = null;
+			        items[0].name = items[0].title;
+			        items[0].value = '' + items[0].value + ';' + items[0].origin.precentage + '%';
+			    },
+			    offsetX: -30
+			});
 			this.G2Device.interval()
 				.position('name*value')
 				.label('value', {

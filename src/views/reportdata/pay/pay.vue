@@ -7,6 +7,9 @@
                     <Radio style="margin: 10px 10px" label="1">设备</Radio>
                 </RadioGroup>
             </div>
+            <div style="float: right;" class="refresh">
+                <Icon size="30" color="#4876FF" type="ios-ionic-outline" @click="init()"/>
+                <span>刷新</span></div>
             <div>
                 <RadioGroup v-model="searchForm.os" type="button" @on-change="init()">
                     <Radio style="margin: 10px 10px" label="0">
@@ -947,5 +950,7 @@
 </script>
 
 <style scoped>
-
+    .refresh:hover {
+        cursor: pointer
+    }
 </style>

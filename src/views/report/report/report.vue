@@ -32,11 +32,20 @@
 </template>
 
 <script>
-    import {queryAllAdvertReq, queryRpc,queryTableConsoleGames, downloadReportReq, queryIpAddress} from '@/api/index';
+    import {
+        queryAllAdvertReq,
+        queryRpc,
+        queryTableConsoleGames,
+        downloadReportReq,
+        queryIpAddress,
+        queryRealReport
+    } from '@/api/index';
     import {Scene, PolygonLayer, LineLayer} from '@antv/l7';
     import {GaodeMap} from '@antv/l7-maps';
     import $ from 'jquery'
     import '../../../../node_modules/echarts/map/js/china.js' // 引入中国地图数据
+    import util from "../../../libs/util";
+
     export default {
         name: "report",
         data() {
@@ -58,7 +67,7 @@
                     {genre: 'Other', sold: 150}
                 ],
                 chart: {},
-                dauIpAddress: []
+                dauIpAddress: [],
             }
         },
         methods: {
@@ -105,7 +114,6 @@
                     fetch('https://gw.alipayobjects.com/os/rmsportal/JToMOWvicvJOISZFCkEI.json')
                         .then(res => res.json())
                         .then(data => {
-                            debugger
                             const colors = [
                                 '#D7F9F0',
                                 '#A6E1E0',
@@ -201,6 +209,36 @@
             timeUtil(time) {
                 return time.getFullYear() + "-" + ((time.getMonth() + 1) < 10 ? "0" + (time.getMonth() + 1) : (time.getMonth() + 1)) + "-" + (time.getDate() < 10 ? "0" + time.getDate() : time.getDate());
             },
+            realTimeUtil(time) {
+                //前5秒的时间
+                let dt1 = new Date(time.getTime() - (time.getSeconds() % 5) * 1000 - 20000);
+                let format1 = (this.dateFormat("YYYY-mm-dd HH:MM:SS", dt1))
+                let dt2 = new Date(time.getTime() - (time.getSeconds() % 5) * 1000 - 25000);
+                let format2 = (this.dateFormat("YYYY-mm-dd HH:MM:SS", dt2))
+
+                return format2 + '_' + format1;
+            },
+            dateFormat(fmt, date) {
+                let ret;
+                const opt = {
+                    "Y+": date.getFullYear().toString(),        // 年
+                    "m+": (date.getMonth() + 1).toString(),     // 月
+                    "d+": date.getDate().toString(),            // 日
+                    "H+": date.getHours().toString(),           // 时
+                    "M+": date.getMinutes().toString(),         // 分
+                    "S+": date.getSeconds().toString()          // 秒
+                    // 有其他格式化字符需求可以继续添加，必须转化成字符串
+                };
+                for (let k in opt) {
+                    ret = new RegExp("(" + k + ")").exec(fmt);
+                    if (ret) {
+                        fmt = fmt.replace(ret[1], (ret[1].length == 1) ? (opt[k]) : (opt[k].padStart(ret[1].length, "0")))
+                    }
+                    ;
+                }
+                ;
+                return fmt;
+            },
             compute(datas) {
                 let data = datas.map(info => {
                     return {
@@ -209,11 +247,20 @@
                     }
                 })
                 return data
-            },
-        }
-        ,
+            }
+            ,
+            deMany() {
+                console.log('防抖test')
+            }
+            ,
+            debounceEvent: util.debounce(function () {
+                this.deMany()
+            }, 2000),
+
+        },
         mounted() {
             this.init();
+
         }
     }
 </script>
@@ -225,9 +272,9 @@
     }
 
     #myEcharts {
-        width: 100%;
-        height: 600px;
-        margin: 10px auto;
+        width: 95%;
+        height: 300px;
+        margin-top: -200px;
     }
 
     .rpcStyle {

@@ -9,7 +9,8 @@
             </RadioGroup>
         </div>
         <Row style="margin-top: 20px">
-            <Table :loading="loadingOnline" height="435" highlight-row @on-row-click="clickOnlineTable" border :columns="columns" :data="tableV"
+            <Table :loading="loadingOnline" height="435" highlight-row @on-row-click="clickOnlineTable" border
+                   :columns="columns" :data="tableV"
                    ref="table"></Table>
         </Row>
         <!--        <div style="background-color:#fff;border-radius: 10px 10px 10px 10px"-->
@@ -25,7 +26,7 @@
         name: "reportOnline",
         data() {
             return {
-                loadingOnline:true,
+                loadingOnline: true,
                 defaultData: {
                     yestoday: 1,
                     week: 7,
@@ -229,7 +230,7 @@
                 queryDaily(paramss).then(e => {
                     this.loadingOnline = false;
                     if (e.success) {
-                        let install = new Map   ();
+                        let install = new Map();
                         this.shareDailyResultTypes = (e.shareDailyResultTypes).forEach(item => {
                             // item.ds = weekChange(item.ds)
                             install.set(item.ds, item.installNum)
@@ -250,33 +251,32 @@
                                             tablesObject['01durationNumbers'] = item.durationNumbers;
                                             tablesObject['01durationRetentionNumbers'] = item.durationRetentionNumbers;
                                             tablesObject['01installPeople'] = install.get(item.installDs) == '' ? '' : (item.durationNumbers / install.get(item.installDs) * 100).toFixed(2);
-                                            tablesObject['01installRention'] = install.get(item.installDs) == '' ? '' : (item.durationRetentionNumbers / install.get(item.installDs) * 100).toFixed(2);
+                                            tablesObject['01installRention'] = install.get(item.installDs) == '' ? '' : (item.durationRetentionNumbers / item.durationNumbers * 100).toFixed(2);
                                         } else if (item.duration == '1-5分钟') {
                                             tablesObject['15durationNumbers'] = item.durationNumbers;
                                             tablesObject['15durationRetentionNumbers'] = item.durationRetentionNumbers;
                                             tablesObject['15installPeople'] = install.get(item.installDs) == '' ? '' : (item.durationNumbers / install.get(item.installDs) * 100).toFixed(2);
-                                            tablesObject['15installRention'] = install.get(item.installDs) == '' ? '' : (item.durationRetentionNumbers / install.get(item.installDs) * 100).toFixed(2);
+                                            tablesObject['15installRention'] = install.get(item.installDs) == '' ? '' : (item.durationRetentionNumbers / item.durationNumbers * 100).toFixed(2);
                                         } else if (item.duration == '5-10分钟') {
                                             tablesObject['510durationNumbers'] = item.durationNumbers;
                                             tablesObject['510durationRetentionNumbers'] = item.durationRetentionNumbers;
                                             tablesObject['510installPeople'] = install.get(item.installDs) == '' ? '' : (item.durationNumbers / install.get(item.installDs) * 100).toFixed(2);
-                                            tablesObject['510installRention'] = install.get(item.installDs) == '' ? '' : (item.durationRetentionNumbers / install.get(item.installDs) * 100).toFixed(2);
+                                            tablesObject['510installRention'] = install.get(item.installDs) == '' ? '' : (item.durationRetentionNumbers / item.durationNumbers * 100).toFixed(2);
                                         } else if (item.duration == '10-20分钟') {
                                             tablesObject['1020durationNumbers'] = item.durationNumbers;
                                             tablesObject['1020durationRetentionNumbers'] = item.durationRetentionNumbers;
                                             tablesObject['1020installPeople'] = install.get(item.installDs) == '' ? '' : (item.durationNumbers / install.get(item.installDs) * 100).toFixed(2);
-                                            tablesObject['1020installRention'] = install.get(item.installDs) == '' ? '' : (item.durationRetentionNumbers / install.get(item.installDs) * 100).toFixed(2);
+                                            tablesObject['1020installRention'] = install.get(item.installDs) == '' ? '' : (item.durationRetentionNumbers / item.durationNumbers * 100).toFixed(2);
                                         } else if (item.duration == '20-30分钟') {
                                             tablesObject['2030durationNumbers'] = item.durationNumbers;
                                             tablesObject['2030durationRetentionNumbers'] = item.durationRetentionNumbers;
                                             tablesObject['2030installPeople'] = install.get(item.installDs) == '' ? '' : (item.durationNumbers / install.get(item.installDs) * 100).toFixed(2);
-                                            tablesObject['2030installRention'] = install.get(item.installDs) == '' ? '' : (item.durationRetentionNumbers / install.get(item.installDs) * 100).toFixed(2);
-                                        } else if (item.duration == '大于30分钟')
-                                        {
+                                            tablesObject['2030installRention'] = install.get(item.installDs) == '' ? '' : (item.durationRetentionNumbers / item.durationNumbers * 100).toFixed(2);
+                                        } else if (item.duration == '大于30分钟') {
                                             tablesObject['30durationNumbers'] = item.durationNumbers;
                                             tablesObject['30durationRetentionNumbers'] = item.durationRetentionNumbers;
                                             tablesObject['30installPeople'] = install.get(item.installDs) == '' ? '' : (item.durationNumbers / install.get(item.installDs) * 100).toFixed(2);
-                                            tablesObject['30installRention'] = install.get(item.installDs) == '' ? '' : (item.durationRetentionNumbers / install.get(item.installDs) * 100).toFixed(2);
+                                            tablesObject['30installRention'] = install.get(item.installDs) == '' ? '' : (item.durationRetentionNumbers / item.durationNumbers * 100).toFixed(2);
                                         }
                                     })
                                     tables.push(tablesObject)

@@ -22,7 +22,6 @@
                     gameid: parseInt(this.getStore('gameid'))
                 }
                 queryIpAddress(param).then(res => {
-                    debugger
                     if (res.success) {
                         this.dauIpAddress = this.compute(res.datas);
                         console.log(this.dauIpAddress)

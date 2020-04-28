@@ -11,7 +11,8 @@
         border: 1px solid sandybrown;
         text-align: center;
     }
-    .ivu-menu-dark{
+
+    .ivu-menu-dark {
         background-color: #fff;
     }
 </style>
@@ -113,7 +114,8 @@
                 <!--                    </FormItem>-->
                 <!--                </Form>-->
 
-                <div style="background-color:#fff;" :class="{'header-avator-con':navType!=4, 'header-avator-con nav4':navType==4}">
+                <div style="background-color:#fff;"
+                     :class="{'header-avator-con':navType!=4, 'header-avator-con nav4':navType==4}">
                     <Dropdown @on-click="selectNav" class="options" v-if="navType==4">
                         <Icon type="ios-apps" :size="24" class="language"></Icon>
                         <DropdownMenu slot="list">
@@ -131,7 +133,8 @@
                             </DropdownItem>
                         </DropdownMenu>
                     </Dropdown>
-                    <div style="width:200px;height:50px;line-height:50px;position: absolute;right: 350%">当前所在游戏：<span style="color: #40a9ff;font-size: 16px;font-weight: bolder">{{gameName}}</span></div>
+                    <div style="width:200px;height:50px;line-height:50px;position: absolute;right: 350%">当前所在游戏：<span
+                            style="color: #40a9ff;font-size: 16px;font-weight: bolder">{{gameName}}</span></div>
                     <full-screen v-model="isFullScreen" @on-change="fullscreenChange"></full-screen>
                     <Dropdown @on-click="handleLanDropdown" class="options">
                         <Icon type="md-globe" :size="24" class="language"></Icon>

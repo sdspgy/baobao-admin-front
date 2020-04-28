@@ -1,12 +1,10 @@
 import axios from 'axios';
-import { getMenuList } from '@/api/index';
+import {getMenuList} from '@/api/index';
 import lazyLoading from './lazyLoading.js';
 import router from '@/router/index';
 import Cookies from "js-cookie";
 
-let util = {
-
-};
+let util = {};
 
 util.title = function (title) {
     title = title || '萌神数据分析后台管理系统';
@@ -168,7 +166,7 @@ util.setCurrentPath = function (vm, name) {
 };
 
 util.openNewPage = function (vm, name, argu, query) {
-    if(!vm.$store){
+    if (!vm.$store) {
         return;
     }
     let pageOpenedList = vm.$store.state.app.pageOpenedList;
@@ -240,21 +238,23 @@ util.initRouter = function (vm) {
 
     // 404路由需要和动态路由一起加载
     const otherRouter = [
-		// {
-  //       path: '/*',
-  //       name: 'error-404',
-  //       meta: {
-  //           title: '404-页面不存在'
-  //       },
-  //       component: 'error-page/404'
-  //   },
-  {path: '/*',
-  name: 'login',
-  meta: {
-      title: '登录 - 萌神游戏数据分析后台管理系统'
-  },
-  component: () => import('@/views/Login.vue')}
-	];
+        // {
+        //       path: '/*',
+        //       name: 'error-404',
+        //       meta: {
+        //           title: '404-页面不存在'
+        //       },
+        //       component: 'error-page/404'
+        //   },
+        {
+            path: '/*',
+            name: 'login',
+            meta: {
+                title: '登录 - 萌神游戏数据分析后台管理系统'
+            },
+            component: () => import('@/views/Login.vue')
+        }
+    ];
     // 判断用户是否登录
     let userInfo = Cookies.get('userInfo')
     if (!userInfo) {
@@ -265,7 +265,7 @@ util.initRouter = function (vm) {
         // 第一次加载 读取数据
         let accessToken = window.localStorage.getItem('accessToken');
         // 加载菜单
-        axios.get(getMenuList, { headers: { 'accessToken': accessToken } }).then(res => {
+        axios.get(getMenuList, {headers: {'accessToken': accessToken}}).then(res => {
             let menuData = res.result;
             if (!menuData) {
                 return;
@@ -285,7 +285,7 @@ util.initRouter = function (vm) {
     } else {
         // 读取缓存数据
         let data = window.localStorage.getItem('menuData');
-        if(!data){
+        if (!data) {
             vm.$store.commit('setAdded', false);
             return;
         }
@@ -300,8 +300,8 @@ util.initAllMenuData = function (constRoutes, data) {
 
     let allMenuData = [];
     data.forEach(e => {
-        if(e.type==-1){
-            e.children.forEach(item=>{
+        if (e.type == -1) {
+            e.children.forEach(item => {
                 allMenuData.push(item);
             })
         }
@@ -409,14 +409,49 @@ util.formatDate = function (date, fmt) {
     return fmt;
 };
 
-function padLeftZero (str) {
+function padLeftZero(str) {
     return ('00' + str).substr(str.length);
 }
 
 /** 时间戳或时间字符串 to 默认格式字符串*/
 util.Time2DefaultFormat = function (timeStamp, fmt) {
     fmt = fmt || 'yyyy-MM-dd HH:mm:ss';
-    return this.formatDate(new Date(timeStamp),fmt);
+    return this.formatDate(new Date(timeStamp), fmt);
+}
+
+util.debounce = function(fn, t)  {
+    let delay = t || 500;
+    let timer;
+    return function () {
+        let args = arguments;
+        if (timer) {
+            clearTimeout(timer);
+        }
+        timer = setTimeout(() => {
+            timer = null;
+            fn.apply(this, args);
+        }, delay);
+    }
+}
+
+util.throttle = function(fn, t) {
+    let last;
+    let timer;
+    let interval = t || 500;
+    return function () {
+        let args = arguments;
+        let now = +new Date();
+        if (last && now - last < interval) {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                last = now;
+                fn.apply(this, args);
+            }, interval);
+        } else {
+            last = now;
+            fn.apply(this, args);
+        }
+    }
 }
 
 export default util;

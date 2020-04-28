@@ -507,7 +507,7 @@ export const deleteGame = (ids, params) => {
 }
 
 export const queryTableConsoleGames = (params) => {
-	return postRequest('/game/tableConsole/games',params)
+    return postRequest('/game/tableConsole/games', params)
 }
 
 
@@ -570,6 +570,11 @@ export const queryIpAddress = (params) => {
 export const queryRpc = (params) => {
     return postRequestMini('/report/api/rpc', params)
 }
+
+export const queryRealReport = (params) => {
+    return postRequestMini('/report/api/realReport', params)
+}
+
 /**
  * 日报下载---------------------------------------------------------------------
  */

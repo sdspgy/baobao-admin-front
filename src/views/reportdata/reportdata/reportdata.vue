@@ -7,6 +7,9 @@
                     <Radio style="margin: 10px 10px" label="设备"></Radio>
                 </RadioGroup>
             </div>
+            <div style="float: right;" class="refresh">
+                <Icon size="30" color="#4876FF" type="ios-ionic-outline" @click="init()"/>
+                <span>刷新</span></div>
             <div>
                 <RadioGroup v-model="phone" type="button" @on-change="init()">
                     <Radio style="margin: 10px 10px" label="ALL">
@@ -30,55 +33,154 @@
                     <Radio style="margin: 10px 10px" label="7日"></Radio>
                     <Radio style="margin: 10px 10px" label="30日"></Radio>
                 </RadioGroup>
+                <!--<Date-picker v-model="timeSection" @on-ok="timeSectionEvent()" type="datetimerange"-->
+                <!--placeholder="选择日期和时间"-->
+                <!--style="width: 300px"></Date-picker>-->
             </div>
         </div>
 
         <div>
             <Row type="flex" justify="space-between"
                  style="margin-bottom: 20px;padding-bottom:10px;border-bottom: 2px solid #EEE8CD">
-                <Col :xs="0" :sm="10" :md="10" :lg="5"
+                <Col v-show="notoday" :xs="0" :sm="5" :md="5" :lg="5"
+                     style="height: 200px;background-color:#fff; border-radius: 10px 10px 10px 10px;border: 1px solid #ebebeb">
+                    <vTitleHead style="font-size: 16px;font-weight: 500;" :inputName="yesterDayDau"></vTitleHead>
+                    <div v-show='nodata' style="height: 130px;line-height: 30px;
+            list-style-type:none;margin-top: 10px;margin-left:30px;font-size: 10px;font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif">
+                        <li style="display: inline-flex"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            人数</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>iOS</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>
+                            Android</p></li>
+                        <li style="display: inline-flex"><p style="width: 60px;text-align: right">昨日：</p>
+                            <p style="width: 50px; text-align: left">{{yesterdayPercentage[0].value}}</p>
+                            <p style="width: 50px; text-align: left">{{yesterdayPercentage[0].payRate}}</p>
+                            <p style="width: 50px; text-align: left">{{yesterdayPercentage[0].payARPU}}</p>
+                        </li>
+                        <li style="display: inline-flex"><p style="width: 60px;text-align: right">周：</p>
+                            <p style="width: 50px; text-align: left">{{weekPercentage[0].value}}</p>
+                            <p style="width: 50px; text-align: left">{{weekPercentage[0].payRate}}</p>
+                            <p style="width: 50px; text-align: left">{{weekPercentage[0].payARPU}}</p>
+                        </li>
+                        <li style="display: inline-flex"><p style="width: 60px;text-align: right">月：</p>
+                            <p style="width: 50px; text-align: left">{{monthPercentage[0].value}}</p>
+                            <p style="width: 50px; text-align: left">{{monthPercentage[0].payRate}}</p>
+                            <p style="width: 50px; text-align: left">{{monthPercentage[0].payARPU}}</p>
+                        </li>
+                    </div>
+                </Col>
+                <Col v-show="notoday" :xs="0" :sm="5" :md="5" :lg="5"
+                     style="height: 200px;background-color:#fff; border-radius: 10px 10px 10px 10px;border: 1px solid #ebebeb">
+                    <vTitleHead style="font-size: 16px;font-weight: 500;" :inputName="weekInstall"></vTitleHead>
+                    <div v-show='nodata' style="height: 130px;line-height: 30px;
+            list-style-type:none;margin-top: 10px;margin-left:30px;font-size: 10px;font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif">
+                        <li style="display: inline-flex"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            人数</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>iOS</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>
+                            Android</p></li>
+                        <li style="display: inline-flex"><p style="width: 60px;text-align: right">昨日：</p>
+                            <p style="width: 50px; text-align: left">{{yesterdayPercentage[1].value}}</p>
+                            <p style="width: 50px; text-align: left">{{yesterdayPercentage[1].payRate}}</p>
+                            <p style="width: 50px; text-align: left">{{yesterdayPercentage[1].payARPU}}</p>
+                        </li>
+                        <li style="display: inline-flex"><p style="width: 60px;text-align: right">周：</p>
+                            <p style="width: 50px; text-align: left">{{weekPercentage[1].value}}</p>
+                            <p style="width: 50px; text-align: left">{{weekPercentage[1].payRate}}</p>
+                            <p style="width: 50px; text-align: left">{{weekPercentage[1].payARPU}}</p>
+                        </li>
+                        <li style="display: inline-flex"><p style="width: 60px;text-align: right">月：</p>
+                            <p style="width: 50px; text-align: left">{{monthPercentage[1].value}}</p>
+                            <p style="width: 50px; text-align: left">{{monthPercentage[1].payRate}}</p>
+                            <p style="width: 50px; text-align: left">{{monthPercentage[1].payARPU}}</p>
+                        </li>
+                    </div>
+                </Col>
+                <Col v-show="notoday" :xs="0" :sm="5" :md="5" :lg="5"
+                     style="height: 200px;background-color:#fff; border-radius: 10px 10px 10px 10px;border: 1px solid #ebebeb">
+                    <vTitleHead style="font-size: 16px;font-weight: 500;" :inputName="weekPay"></vTitleHead>
+                    <div v-show='nodata' style="height: 130px;line-height: 30px;
+            list-style-type:none;margin-top: 10px;font-size: 10px;font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif">
+                        <li style="display: inline-flex"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            人数</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>付费率</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>
+                            ARPU</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>ARPPU</p></li>
+                        <li style="display: inline-flex"><p style="width: 60px;text-align: right">昨日：</p>
+                            <p style="width: 50px; text-align: left">{{yesterdayPercentage[2].value}}</p>
+                            <p style="width: 50px; text-align: left">{{yesterdayPercentage[2].payRate}}</p>
+                            <p style="width: 50px; text-align: left">{{yesterdayPercentage[2].payARPU}}</p>
+                            <p style="width: 50px; text-align: left">{{yesterdayPercentage[2].payARPPU}}</p>
+                        </li>
+                        <li style="display: inline-flex"><p style="width: 60px;text-align: right">周：</p>
+                            <p style="width: 50px; text-align: left">{{weekPercentage[2].value}}</p>
+                            <p style="width: 50px; text-align: left">{{weekPercentage[2].payRate}}</p>
+                            <p style="width: 50px; text-align: left">{{weekPercentage[2].payARPU}}</p>
+                            <p style="width: 50px; text-align: left">{{weekPercentage[2].payARPPU}}</p>
+                        </li>
+                        <li style="display: inline-flex"><p style="width: 60px;text-align: right">月：</p>
+                            <p style="width: 50px; text-align: left">{{monthPercentage[2].value}}</p>
+                            <p style="width: 50px; text-align: left">{{monthPercentage[2].payRate}}</p>
+                            <p style="width: 50px; text-align: left">{{monthPercentage[2].payARPU}}</p>
+                            <p style="width: 50px; text-align: left">{{monthPercentage[2].payARPPU}}</p>
+                        </li>
+                    </div>
+                </Col>
+                <Col v-show='today' :xs="5" :sm="5" :md="5" :lg="5"
                      style="height: 200px;background-color:#fff; border-radius: 10px 10px 10px 10px;border: 1px solid #ebebeb">
                     <vTitleHead style="font-size: 16px;font-weight: 500;" :inputName="dau"></vTitleHead>
                     <div v-show='nodata' style="height: 130px;line-height: 30px;
-            list-style-type:none;margin-left: 40px;margin-top: 10px;font-size: 14px;font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif">
-                        <li style="display: inline-flex"><p style="width: 100px;text-align: right">人 &nbsp;&nbsp; 数：</p>
-                            <p style="width: 100px; text-align: left">{{realtimeStatis[0].value}}</p>
+            list-style-type:none;margin-left:70px;margin-top: 10px;font-size: 10px;font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif">
+                        <li style="display: inline-flex"><p style="width: 60px;text-align: right">人数：</p>
+                            <p style="width: 150px; text-align: left">{{realtimeStatis[0].value}}</p>
+                            <!--<p style="width: 30px; text-align: left">{{yesterdayPercentage[0].value}}</p>-->
                         </li>
-                        <li style="display: inline-flex"><p style="width: 100px;text-align: right">iOS：</p>
-                            <p style="width: 100px; text-align: left">{{realtimeStatis[0].payARPU}}</p>
+                        <li style="display: inline-flex"><p style="width: 60px;text-align: right">iOS：</p>
+                            <p style="width: 150px; text-align: left">{{realtimeStatis[0].payRate}}</p>
+                            <!--<p style="width: 100px; text-align: left">{{yesterdayPercentage[0].payRate}}</p>-->
                         </li>
-                        <li style="display: inline-flex"><p style="width: 100px;text-align: right">Android：</p>
-                            <p style="width: 100px; text-align: left"> {{realtimeStatis[0].payRate}}</p>
+                        <li style="display: inline-flex"><p style="width: 60px;text-align: right">Android：</p>
+                            <p style="width: 150px; text-align: left"> {{realtimeStatis[0].payARPU}}</p>
+                            <!--<p style="width: 100px; text-align: left"> {{yesterdayPercentage[0].payARPU}}</p>-->
                         </li>
                     </div>
                 </Col>
-                <Col :xs="0" :sm="10" :md="10" :lg="5"
+                <Col v-show='today' :xs="5" :sm="5" :md="5" :lg="5"
                      style="height: 200px;background-color:#fff; border-radius: 10px 10px 10px 10px;border: 1px solid #ebebeb">
                     <vTitleHead style="font-size: 16px;font-weight: 500;"
                                 :inputName="install"></vTitleHead>
-                    <div v-show='nodata' style="height: 130px;line-height: 30px;
-            list-style-type:none; margin-left: 40px;margin-top: 10px;font-size: 14px">
-                        <li style="display: inline-flex"><p style="width: 100px;text-align: right">人 &nbsp;&nbsp; 数：</p>
-                            <p style="width: 100px; text-align: left">{{realtimeStatis[1].value}}</p></li>
-                        <li style="display: inline-flex"><p style="width: 100px;text-align: right">iOS：</p>
-                            <p style="width: 100px; text-align: left">{{realtimeStatis[1].payRate}}</p></li>
-                        <li style="display: inline-flex"><p style="width: 100px;text-align: right">Android：</p>
-                            <p style="width: 100px; text-align: left">{{realtimeStatis[1].payARPU}}</p></li>
+                    <div v-show='nodata' style="height: 130px;line-height: 30px;margin-left:70px;
+            list-style-type:none;margin-top: 10px;font-size: 10px">
+                        <li style="display: inline-flex"><p style="width: 60px;text-align: right">人数：</p>
+                            <p style="width: 150px; text-align: left">{{realtimeStatis[1].value}}</p>
+                            <!--<p style="width: 100px; text-align: left">{{yesterdayPercentage[1].value}}</p>-->
+                        </li>
+                        <li style="display: inline-flex"><p style="width: 60px;text-align: right">iOS：</p>
+                            <p style="width: 150px; text-align: left">{{realtimeStatis[1].payRate}}</p>
+                            <!--<p style="width: 100px; text-align: left">{{yesterdayPercentage[1].payRate}}</p>-->
+                        </li>
+                        <li style="display: inline-flex"><p style="width: 60px;text-align: right">Android：</p>
+                            <p style="width: 150px; text-align: left">{{realtimeStatis[1].payARPU}}</p>
+                            <!--<p style="width: 100px; text-align: left">{{yesterdayPercentage[1].payARPU}}</p>-->
+                        </li>
                     </div>
                 </Col>
-                <Col :xs="0" :sm="10" :md="10" :lg="5"
+                <Col v-show='today' :xs="5" :sm="5" :md="5" :lg="5"
                      style="height: 200px;background-color:#fff; border-radius: 10px 10px 10px 10px;border: 1px solid #ebebeb">
                     <vTitleHead style="font-size: 16px;font-weight: 500;" :inputName="pay"></vTitleHead>
-                    <div v-show='nodata' style="height: 130px; line-height: 25px;
-            list-style-type:none;margin-left: 40px;margin-top: 10px;font-size: 14px">
-                        <li style="display: inline-flex"><p style="width: 100px;text-align: right">总 &nbsp;&nbsp; 额：</p>
-                            <p style="width: 100px; text-align: left">{{realtimeStatis[2].value}}</p></li>
-                        <li style="display: inline-flex"><p style="width: 100px;text-align: right">付&nbsp;费&nbsp;率：</p>
-                            <p style="width: 100px; text-align: left">{{realtimeStatis[2].payRate}}</p></li>
-                        <li style="display: inline-flex"><p style="width: 100px;text-align: right">ARPU：</p>
-                            <p style="width: 100px; text-align: left">{{realtimeStatis[2].payARPU}}</p></li>
-                        <li style="display: inline-flex"><p style="width: 100px;text-align: right">ARPPU：</p>
-                            <p style="width: 100px; text-align: left">{{realtimeStatis[2].payARPPU}}</p></li>
+                    <div v-show='nodata' style="height: 130px; line-height: 25px;margin-left:70px;
+            list-style-type:none;margin-top: 10px;font-size: 10px">
+                        <li style="display: inline-flex"><p style="width: 60px;text-align: right">总额：</p>
+                            <p style="width: 150px; text-align: left">{{realtimeStatis[2].value}}</p>
+                            <!--<p style="width: 60px; text-align: left">{{yesterdayPercentage[2].value}}</p>-->
+                        </li>
+                        <li style="display: inline-flex"><p style="width: 60px;text-align: right">付费率：</p>
+                            <p style="width: 150px; text-align: left">{{realtimeStatis[2].payRate}}</p>
+                            <!--<p style="width: 60px; text-align: left">{{yesterdayPercentage[2].payRate}}</p>-->
+                        </li>
+                        <li style="display: inline-flex"><p style="width: 60px;text-align: right">ARPU：</p>
+                            <p style="width: 50px; text-align: left">{{realtimeStatis[2].payARPU}}</p>
+                            <!--<p style="width: 60px; text-align: left">{{yesterdayPercentage[2].payARPU}}</p>-->
+
+                        </li>
+                        <li style="display: inline-flex"><p style="width: 60px;text-align: right">ARPPU：</p>
+                            <p style="width: 150px; text-align: left">{{realtimeStatis[2].payARPPU}}</p>
+                            <!--<p style="width: 60px; text-align: left">{{yesterdayPercentage[2].payARPPU}}</p>-->
+                        </li>
                     </div>
                 </Col>
                 <Col :xs="0" :sm="10" :md="10" :lg="5"
@@ -86,23 +188,32 @@
                     <vTitleHead style="font-size: 16px;font-weight: 500;"
                                 :inputName="retention"></vTitleHead>
                     <div style="height: 130px; line-height: 30px;
-            list-style-type:none;margin-left: 40px;margin-top: 10px;font-size: 14px">
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3日</li>
-                        <li>{{retentionDataList[0].ds}}: &nbsp;<span
-                                :class="parseFloat(retentionDataList[0].oneRetentionPercentage) > 30 ? 'isRed' : ''">{{retentionDataList[0].oneRetentionPercentage}}</span>
+            list-style-type:none;margin-left: 40px;margin-top: 10px;font-size: 10px">
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3日</li>
+                        <li style="display: inline-flex">{{retentionDataList[0].ds}}: &nbsp;<p
+                                style="width: 50px; text-align: left"
+                                :class="parseFloat(retentionDataList[0].oneRetentionPercentage) > 30 ? 'isRed' : ''">
+                            {{retentionDataList[0].oneRetentionPercentage}}</p>
                         </li>
-                        <li>{{retentionDataList[1].ds}}: &nbsp;<span
-                                :class="parseFloat(retentionDataList[1].oneRetentionPercentage) > 30 ? 'isRed' : ''">{{retentionDataList[1].oneRetentionPercentage}}</span>
-                            &nbsp;
-                            &nbsp;<span
-                                    :class="parseFloat(retentionDataList[1].twoRetentionPercentage) > 30 ? 'isRed' : ''">{{retentionDataList[1].twoRetentionPercentage}}</span>
+                        <li style="display: inline-flex">{{retentionDataList[1].ds}}: &nbsp;<p
+                                style="width: 50px; text-align: left"
+                                :class="parseFloat(retentionDataList[1].oneRetentionPercentage) > 30 ? 'isRed' : ''">
+                            {{retentionDataList[1].oneRetentionPercentage}}</p>
+                            <p style="width: 50px; text-align: left"
+                               :class="parseFloat(retentionDataList[1].twoRetentionPercentage) > 30 ? 'isRed' : ''">
+                                {{retentionDataList[1].twoRetentionPercentage}}</p>
                         </li>
-                        <li>{{retentionDataList[2].ds}}: &nbsp;<span
-                                :class="parseFloat(retentionDataList[2].oneRetentionPercentage) > 30 ? 'isRed' : ''">{{retentionDataList[2].oneRetentionPercentage}}</span>&nbsp;
-                            <span
-                                    :class="parseFloat(retentionDataList[2].twoRetentionPercentage) > 30 ? 'isRed' : ''">{{retentionDataList[2].twoRetentionPercentage}}
-                        </span>&nbsp;<span
-                                    :class="parseFloat(retentionDataList[2].threeRetentionPercentage) > 30 ? 'isRed' : ''">{{retentionDataList[2].threeRetentionPercentage}}</span>
+                        <li style="display: inline-flex">{{retentionDataList[2].ds}}: &nbsp;<p
+                                style="width: 50px; text-align: left"
+                                :class="parseFloat(retentionDataList[2].oneRetentionPercentage) > 30 ? 'isRed' : ''">
+                            {{retentionDataList[2].oneRetentionPercentage}}</p>
+                            <p style="width: 50px; text-align: left"
+                               :class="parseFloat(retentionDataList[2].twoRetentionPercentage) > 30 ? 'isRed' : ''">
+                                {{retentionDataList[2].twoRetentionPercentage}}
+                            </p>
+                            <p style="width: 50px; text-align: left"
+                               :class="parseFloat(retentionDataList[2].threeRetentionPercentage) > 30 ? 'isRed' : ''">
+                                {{retentionDataList[2].threeRetentionPercentage}}</p>
                         </li>
                     </div>
                 </Col>
@@ -146,13 +257,21 @@
 
         <div class="menyLine">
             <vTitleHead :inputName="payChart"></vTitleHead>
+            <div v-show="isPayshow">
+                <RadioGroup v-model="isPayType" type="button" @on-change="init()">
+                    <Radio style="margin: 10px 10px" label="0">次数</Radio>
+                    <Radio style="margin: 10px 10px" label="1">金额</Radio>
+                    <Radio style="margin: 10px 10px" label="2">人数</Radio>
+                </RadioGroup>
+            </div>
             <div style="background-color:#fff; border-radius: 0 0 10px 10px" id="surveyManyLine"></div>
         </div>
 
         <div class="bottomTable">
             <vTitleHead :inputName="retenTable"></vTitleHead>
             <Row>
-                <Table height="440" highlight-row border :columns="retentionTable" :data="retentionDataList"
+                <Table height="440" highlight-row border :row-class-name="rowClassName" :columns="retentionTable"
+                       :data="retentionDataListTable"
                        ref="table"></Table>
             </Row>
         </div>
@@ -180,14 +299,26 @@
         components: {vTitleHead},
         data() {
             return {
-				nodata:true,
+                today: true,
+                notoday: true,
+                timeSection: [],
+                nodata: true,
                 tableTrue: true,
                 value1: '1',
                 isShowCondition: false,
                 name: '概况数据',
                 systemName: '操作系统百分比(活跃/新增)',
+                monthDau: '月活跃',
+                weekDau: '周活跃',
+                yesterDayDau: '活跃',
                 dau: '活跃',
+                monthInstall: '月新增',
+                weekInstall: '新增',
+                yesterDayInstall: '昨日新增',
                 install: '新增',
+                monthPay: '月付费(元)',
+                weekPay: '付费(元)',
+                yesterDayPay: '昨日付费(元)',
                 pay: '付费(元)',
                 retention: '留存(%)',
                 payChart: '付费数据',
@@ -199,10 +330,68 @@
                 dauOrInstall: '活跃',
                 listData: [],
                 payList: [],
-                retentionDataList: [],
+                retentionDataListTable: [],
                 datas: [],
-                isccc:99,
+                isccc: 99,
+                isPayType: "2",
+                isPayshow:false,
+                tips: [
+                    "昨日所在周的活跃",
+                    "昨日所在周的新增",
+                    "昨日所在周的付费",
+                    "昨日所在月的活跃",
+                    "昨日所在月的新增",
+                    "昨日所在月的付费",
+                ],
                 realtimeStatis: [{
+                    value: '',
+                    payRate: '',
+                    payARPU: '',
+                    payARPPU: '',
+                }, {
+                    value: '',
+                    payRate: '',
+                    payARPU: '',
+                    payARPPU: '',
+                }, {
+                    value: '',
+                    payRate: '',
+                    payARPU: '',
+                    payARPPU: '',
+                }],
+                yesterdayPercentage: [{
+                    value: '',
+                    payRate: '',
+                    payARPU: '',
+                    payARPPU: '',
+                }, {
+                    value: '',
+                    payRate: '',
+                    payARPU: '',
+                    payARPPU: '',
+                }, {
+                    value: '',
+                    payRate: '',
+                    payARPU: '',
+                    payARPPU: '',
+                }],
+                weekPercentage: [{
+                    value: '',
+                    payRate: '',
+                    payARPU: '',
+                    payARPPU: '',
+                }, {
+                    value: '',
+                    payRate: '',
+                    payARPU: '',
+                    payARPPU: '',
+                }, {
+                    value: '',
+                    payRate: '',
+                    payARPU: '',
+                    payARPPU: '',
+                }],
+                monthPercentage: [{
                     value: '',
                     payRate: '',
                     payARPU: '',
@@ -375,43 +564,120 @@
                         title: '1日',
                         key: 'oneRetentionPercentage',
                         align: 'center',
-                        width: 80
+                        width: 80,
+                        render: (h, params) => {
+                            if (params.index == 0) {
+                                return h('div', {
+                                    style: {
+                                        color: '#1C86EE'
+                                    }
+                                }, params.row.oneRetentionPercentage)
+                            } else {
+                                return h('div', {}, params.row.oneRetentionPercentage)
+                            }
+                        }
                     },
                     {
                         title: '2日',
                         key: 'twoRetentionPercentage',
                         align: 'center',
-                        width: 80
+                        width: 80,
+                        render: (h, params) => {
+                            if (params.index == 1) {
+                                return h('div', {
+                                    style: {
+                                        color: '#1C86EE',
+                                    }
+                                }, params.row.twoRetentionPercentage)
+                            } else {
+                                return h('div', {}, params.row.twoRetentionPercentage)
+                            }
+                        }
                     },
                     {
                         title: '3日',
                         key: 'threeRetentionPercentage',
                         align: 'center',
-                        width: 80
+                        width: 80,
+                        render: (h, params) => {
+                            if (params.index == 2) {
+                                return h('div', {
+                                    style: {
+                                        color: '#1C86EE',
+                                    }
+                                }, params.row.threeRetentionPercentage)
+                            } else {
+                                return h('div', {}, params.row.threeRetentionPercentage)
+                            }
+                        }
                     },
                     {
                         title: '4日',
                         key: 'fourRetentionPercentage',
                         align: 'center',
-                        width: 80
+                        width: 80,
+                        render: (h, params) => {
+                            if (params.index == 3) {
+                                return h('div', {
+                                    style: {
+                                        color: '#1C86EE',
+                                    }
+                                }, params.row.fourRetentionPercentage)
+                            } else {
+                                return h('div', {}, params.row.fourRetentionPercentage)
+                            }
+                        }
                     },
                     {
                         title: '5日',
                         key: 'fiveRetentionPercentage',
                         align: 'center',
-                        width: 80
+                        width: 80,
+                        render: (h, params) => {
+                            if (params.index == 4) {
+                                return h('div', {
+                                    style: {
+                                        color: '#1C86EE',
+                                    }
+                                }, params.row.fiveRetentionPercentage)
+                            } else {
+                                return h('div', {}, params.row.fiveRetentionPercentage)
+                            }
+                        }
                     },
                     {
                         title: '6日',
                         key: 'sixRetentionPercentage',
                         align: 'center',
-                        width: 80
+                        width: 80,
+                        render: (h, params) => {
+                            if (params.index == 5) {
+                                return h('div', {
+                                    style: {
+                                        color: '#1C86EE',
+                                    }
+                                }, params.row.sixRetentionPercentage)
+                            } else {
+                                return h('div', {}, params.row.sixRetentionPercentage)
+                            }
+                        }
                     },
                     {
                         title: '7日',
                         key: 'sevenRetentionPercentage',
                         align: 'center',
-                        width: 80
+                        width: 80,
+                        render: (h, params) => {
+                            if (params.index == 6) {
+                                return h('div', {
+                                    style: {
+                                        color: '#1C86EE',
+                                    }
+                                }, params.row.sevenRetentionPercentage)
+                            } else {
+                                return h('div', {}, params.row.sevenRetentionPercentage)
+                            }
+                        }
                     },
                     {
                         title: '8日',
@@ -558,6 +824,8 @@
                 chartData: [],
                 map_pieChartD: {},
                 map_pieChartI: {},
+                timeBeginSection: '',
+                timeOverSection: '',
             };
         },
         methods: {
@@ -568,19 +836,28 @@
                 this.isShowCondition = false;
             },
             init() {
-				if(this.data == '7日' ){
-					this.dau = '周活跃';
-					this.install= '周新增';
-					this.pay = '周付费(元)'
-				}else if(this.data == '30日' ){
-					this.dau = '月活跃';
-					this.install= '月新增';
-					this.pay = '月付费(元)'
-				}else{
-					this.dau = '活跃';
-					this.install= '新增';
-					this.pay = '付费(元)'
-				}
+                if (initData[this.data] == 0) {
+                    this.isPayshow = true;
+                    this.today = true;
+                    this.notoday = false;
+                } else {
+                    this.isPayshow = false;
+                    this.today = false;
+                    this.notoday = true;
+                }
+                if (this.data == '7日') {
+                    this.dau = '周活跃';
+                    this.install = '周新增';
+                    this.pay = '周付费(元)'
+                } else if (this.data == '30日') {
+                    this.dau = '月活跃';
+                    this.install = '月新增';
+                    this.pay = '月付费(元)'
+                } else {
+                    this.dau = '活跃';
+                    this.install = '新增';
+                    this.pay = '付费(元)'
+                }
                 if (this.getStore('parentId') == 0) {
                     this.isShow = true
                 } else {
@@ -597,26 +874,15 @@
                     height: 295
                 });
                 this.surveyManyLine.source(this.handelPayCount, {});
-                this.surveyManyLine.scale('value', {
-                    min: 0,
-                    alias: '人数',
-                });
+                // this.surveyManyLine.scale('value', {
+                //     min: 0,
+                //     alias: '人数',
+                // });
                 this.surveyManyLine.scale('time', {
                     tickCount: 10,
                 });
-                this.surveyManyLine.tooltip({
-                    crosshairs: {
-                        type: 'line'
-                    }
-                });
-                // 坐标轴文本旋转
-                this.surveyManyLine.axis('time', {
-                    label: {
-                        rotate: -Math.PI / 2.5,
-                        textAlign: 'end',
-                        textBaseline: 'middle'
-                    }
-                });
+
+
                 this.surveyManyLine.axis('time', {
                     label: {
                         formatter: val => {
@@ -624,6 +890,7 @@
                         }
                     }
                 });
+
                 //设置图列居中显示
                 this.surveyManyLine.legend({
                     position: 'bottom', //图列位置
@@ -663,11 +930,6 @@
                     // range: [0, 1]
                     tickCount: 10,
                 });
-                this.surveyOneLine.tooltip({
-                    crosshairs: {
-                        type: 'line'
-                    }
-                });
                 // 坐标轴文本旋转
                 this.surveyOneLine.axis('time', {
                     label: {
@@ -676,16 +938,20 @@
                         textBaseline: 'middle'
                     }
                 });
-                // this.surveyOneLine.line().position('time*value').shape('smooth').color('l(0) 0:#1E90FF 0.5:#1E90FF 1:#1E90FF');
+                this.surveyOneLine
+                    .line()
+                    .position('time*value')
+                    .color('type')
+                    .shape('smooth');
                 this.surveyOneLine.point().position('time*value')
                     .size(4)
                     .shape('circle')
+                    .color('type')
                     .style({
                         stroke: '#fff',
                         lineWidth: 1
                     })
-                    .color('l(0) 0:#1E90FF 0.5:#1E90FF 1:#1E90FF');
-                this.surveyOneLine.area().position('time*value').shape('smooth');
+                // this.surveyOneLine.area().position('time*value');
                 this.surveyOneLine.render();
                 // return this.surveyOneLine;
             },
@@ -716,7 +982,7 @@
                     .tooltip('os*dauNum', (os, dauNum) => {
                         return {
                             name: os,
-                            value: dauNum
+                            // value: dauNum
                         };
                     })
                     .style({
@@ -751,7 +1017,7 @@
                     .tooltip('os*installNum', (os, dauNum) => {
                         return {
                             name: os,
-                            value: dauNum
+                            // value: dauNum
                         };
                     })
                     .style({
@@ -759,6 +1025,10 @@
                         stroke: '#fff'
                     });
                 this.installChart.render();
+            },
+            showTips(info) {
+                let index = info;
+                this.$Message.info(this.tips[info]);
             },
             initTable() {
                 if (initData[this.data] == 1 || initData[this.data] == 0) {
@@ -797,6 +1067,14 @@
                 // let finalTable = tables.concat(days);
                 // this.finalTable = finalTable;
             },
+            timeUtil(time) {
+                return time.getFullYear() + "-" + ((time.getMonth() + 1) < 10 ? "0" + (time.getMonth() + 1) : (time.getMonth() + 1)) + "-" + (time.getDate() < 10 ? "0" + time.getDate() : time.getDate());
+            },
+            timeSectionEvent() {
+                this.timeBeginSection = this.timeUtil(this.timeSection[0]);
+                this.timeOverSection = this.timeUtil(this.timeSection[1]);
+                this.queryDaily()
+            },
             queryDaily() {
                 let params = {
                     gameid: parseInt(this.getStore('gameid')),
@@ -804,39 +1082,349 @@
                     osType: initPhone[this.phone],
                     data: parseInt(initData[this.data]),
                     hxType: parseInt(this.dauOrInstall === '活跃' ? 0 : 1),
+                    timeOverSection: this.timeOverSection,
+                    timeBeginSection: this.timeBeginSection
                 }
                 queryDaily(params).then(e => {
                     if (e.success) {
                         let percentage = []
                         if (e.androidIosProportions.length > 0) {
                             percentage = this.androidIosProportions(e.androidIosProportions);
-							this.nodata = true;
-                        }else {
-							this.nodata = false;
-						}
-                        this.listData = this.tableDataProcess(e.shareDailyResultTypes, percentage);
-                        this.payList = e.payList;
-						if(e.shareRetentionList.length > 0){
-							  this.retentionDataList = this.saturday(e.shareRetentionList);
-						}
-                        this.datas = this.f2DI(e.dauNumOrInstallNumList, initData[this.data].toString(), this.listData, parseInt(this.dauOrInstall === '活跃' ? 0 : 1));
-                        this.handelPayCount = this.makeCavas(this.listData, initData[this.data]);
+                            this.nodata = true;
+                        } else {
+                            this.nodata = false;
+                        }
+                        //单独处理昨天
+                        let yesterdayPercentage = [];
+                        if (e.yesterdayAndroidIosProportions.length > 0) {
+                            yesterdayPercentage = this.androidIosProportions(e.yesterdayAndroidIosProportions);
+                            this.yesTableDataProcess(e.yesterdayShareDaily, yesterdayPercentage, initData[this.data])
+                        }
+                        //周
+                        let weekPercentage = [];
+                        if (e.weekAndroidIosProportions.length > 0) {
+                            weekPercentage = this.androidIosProportions(e.weekAndroidIosProportions);
+                            this.weekTableDataProcess(e.weekShareDaily, weekPercentage, initData[this.data])
+                        }
+                        //月
+                        let monthPercentage = [];
+                        if (e.monthAndroidIosProportions.length > 0) {
+                            monthPercentage = this.androidIosProportions(e.monthAndroidIosProportions);
+                            this.monthTableDataProcess(e.monthShareDaily, monthPercentage, initData[this.data])
+                        }
+                        this.listData = this.tableDataProcess(e.shareDailyResultTypes, percentage, initData[this.data]);
+                        if (e.payList.length > 0) {
+                            this.payList = e.payList;
+                        }
+                        if (e.shareRetentionList.length > 0) {
+                            this.retentionDataListTable = this.saturday(e.shareRetentionList);
+                        }
+                        this.datas = this.f2DI(e.dauNumOrInstallNumList, initData[this.data].toString(), this.listData, e.yesterdayShareDaily, parseInt(this.dauOrInstall === '活跃' ? 0 : 1));
+                        this.handelPayCount = this.makeCavas(this.listData, initData[this.data], e.yesterdayShareDaily,this.isPayType);
                         this.chartData = this.makePieChart(e.androidIosProportions);
                         this.surveyOneLine.changeData(this.datas);
                         this.surveyManyLine.changeData(this.handelPayCount);
                         this.davChart.changeData(this.chartData);
                         this.installChart.changeData(this.chartData);
-						if(this.data == '7日'){
-							debugger
-						    this.realtimeStatis[0].value = e.weekStats.wdu
-						    this.realtimeStatis[1].value = e.weekStats.wnu
-						}
-						if(this.data == '30日'){
-						    this.realtimeStatis[0].value = e.monthStats.mdu
-						    this.realtimeStatis[1].value = e.monthStats.mnu
-						}
+                        if (this.data != '今天') {
+                            this.weekPercentage[0].value = e.weekStats.wdu
+                            this.weekPercentage[1].value = e.weekStats.wnu
+                        }
+                        if (this.data != '今天') {
+                            this.monthPercentage[0].value = e.monthStats.mdu
+                            this.monthPercentage[1].value = e.monthStats.mnu
+                        }
+                        if (e.shareRetentionList.length > 0) {
+                            this.retentionDataList[0].ds = this.retentionDataListTable[0].ds;
+                            this.retentionDataList[0].oneRetentionPercentage = this.retentionDataListTable[0].oneRetentionPercentage;
+                            if (e.shareRetentionList.length >= 1) {
+                                this.retentionDataList[1].ds = this.retentionDataListTable[1].ds;
+                                this.retentionDataList[1].oneRetentionPercentage = this.retentionDataListTable[1].oneRetentionPercentage;
+                                this.retentionDataList[1].twoRetentionPercentage = this.retentionDataListTable[1].twoRetentionPercentage;
+                            }
+                            if (e.shareRetentionList.length >= 2) {
+                                this.retentionDataList[2].ds = this.retentionDataListTable[2].ds;
+                                this.retentionDataList[2].oneRetentionPercentage = this.retentionDataListTable[2].oneRetentionPercentage;
+                                this.retentionDataList[2].twoRetentionPercentage = this.retentionDataListTable[2].twoRetentionPercentage;
+                                this.retentionDataList[2].threeRetentionPercentage = this.retentionDataListTable[2].threeRetentionPercentage;
+                            }
+                        }
                     }
                 });
+            },
+            monthTableDataProcess: function (data, info, date) {
+                if (data.length > 0) {
+                    let activeNum = 0,
+                        newIntall = 0,
+                        payTotal = 0,
+                        payCount = 0;
+
+                    data.forEach((item) => {
+                        activeNum += item.dauNum;
+                        newIntall += item.installNum;
+                        payTotal += item.payAmount;
+                        payCount += item.payCount;
+                    });
+                    if (info.length > 0) {
+                        let realtimeArray = [];
+                        let realtimeObject1 = new Object();
+                        realtimeObject1.title = '活跃';
+                        realtimeObject1.value = activeNum;
+                        realtimeObject1.payRate = info[1];
+                        realtimeObject1.payARPU = info[0];
+                        let realtimeObject2 = new Object();
+                        realtimeObject2.title = '新增';
+                        realtimeObject2.payRate = info[3];
+                        realtimeObject2.payARPU = info[2];
+                        realtimeObject2.value = newIntall;
+                        let realtimeObject3 = new Object();
+                        realtimeObject3.title = '付费';
+
+                        realtimeObject3.value = payTotal / this.getStore("currencyRate");
+                        realtimeObject3.payRate = (activeNum == 0 ? 0 : (payCount * 100 / activeNum).toFixed(2) + '%');
+                        realtimeObject3.payARPU = (activeNum == 0 ? 0 : (payTotal / this.getStore("currencyRate") / activeNum).toFixed(2));
+                        realtimeObject3.payARPPU = (payCount == 0 ? 0 : (payTotal / this.getStore("currencyRate") / payCount).toFixed(2));
+
+                        realtimeArray.push(realtimeObject1);
+                        realtimeArray.push(realtimeObject2);
+                        realtimeArray.push(realtimeObject3);
+                        this.monthPercentage = realtimeArray;
+                    } else {
+                        let realtimeArrayss = [];
+                        let realtimeObject1 = new Object();
+                        realtimeObject1.title = '活跃';
+                        realtimeObject1.value = '';
+                        realtimeObject1.payRate = '';
+                        realtimeObject1.payARPU = '';
+                        let realtimeObject2 = new Object();
+                        realtimeObject2.title = '新增';
+                        realtimeObject2.payRate = '';
+                        realtimeObject2.payARPU = '';
+                        realtimeObject2.value = '';
+                        let realtimeObject3 = new Object();
+                        realtimeObject3.title = '付费';
+
+                        realtimeObject3.value = '';
+                        realtimeObject3.payRate = '';
+                        realtimeObject3.payARPU = '';
+                        realtimeObject3.payARPPU = '';
+
+                        realtimeArrayss.push(realtimeObject1);
+                        realtimeArrayss.push(realtimeObject2);
+                        realtimeArrayss.push(realtimeObject3);
+                        this.monthPercentage = realtimeArrayss;
+                    }
+                } else {
+                    let realtimeArrays = [];
+                    let realtimeObject1 = new Object();
+                    realtimeObject1.title = '活跃';
+                    realtimeObject1.value = '';
+                    realtimeObject1.payRate = '';
+                    realtimeObject1.payARPU = '';
+                    let realtimeObject2 = new Object();
+                    realtimeObject2.title = '新增';
+                    realtimeObject2.payRate = '';
+                    realtimeObject2.payARPU = '';
+                    realtimeObject2.value = '';
+                    let realtimeObject3 = new Object();
+                    realtimeObject3.title = '付费';
+
+                    realtimeObject3.value = '';
+                    realtimeObject3.payRate = '';
+                    realtimeObject3.payARPU = '';
+                    realtimeObject3.payARPPU = '';
+
+                    realtimeArray.push(realtimeObject1);
+                    realtimeArray.push(realtimeObject2);
+                    realtimeArray.push(realtimeObject3);
+                    this.monthPercentage = realtimeArrays;
+                }
+            },
+            weekTableDataProcess: function (data, info, date) {
+                if (data.length > 0) {
+                    let activeNum = 0,
+                        newIntall = 0,
+                        payTotal = 0,
+                        payCount = 0;
+
+                    data.forEach((item) => {
+                        activeNum += item.dauNum;
+                        newIntall += item.installNum;
+                        payTotal += item.payAmount;
+                        payCount += item.payCount;
+                    });
+                    if (info.length > 0) {
+                        let realtimeArray = [];
+                        let realtimeObject1 = new Object();
+                        realtimeObject1.title = '活跃';
+                        realtimeObject1.value = activeNum;
+                        realtimeObject1.payRate = info[1];
+                        realtimeObject1.payARPU = info[0];
+                        let realtimeObject2 = new Object();
+                        realtimeObject2.title = '新增';
+                        realtimeObject2.payRate = info[3];
+                        realtimeObject2.payARPU = info[2];
+                        realtimeObject2.value = newIntall;
+                        let realtimeObject3 = new Object();
+                        realtimeObject3.title = '付费';
+
+                        realtimeObject3.value = payTotal / this.getStore("currencyRate");
+                        realtimeObject3.payRate = (activeNum == 0 ? 0 : (payCount * 100 / activeNum).toFixed(2) + '%');
+                        realtimeObject3.payARPU = (activeNum == 0 ? 0 : (payTotal / this.getStore("currencyRate") / activeNum).toFixed(2));
+                        realtimeObject3.payARPPU = (payCount == 0 ? 0 : (payTotal / this.getStore("currencyRate") / payCount).toFixed(2));
+
+                        realtimeArray.push(realtimeObject1);
+                        realtimeArray.push(realtimeObject2);
+                        realtimeArray.push(realtimeObject3);
+                        this.weekPercentage = realtimeArray;
+                    } else {
+                        let realtimeArrayss = [];
+                        let realtimeObject1 = new Object();
+                        realtimeObject1.title = '活跃';
+                        realtimeObject1.value = '';
+                        realtimeObject1.payRate = '';
+                        realtimeObject1.payARPU = '';
+                        let realtimeObject2 = new Object();
+                        realtimeObject2.title = '新增';
+                        realtimeObject2.payRate = '';
+                        realtimeObject2.payARPU = '';
+                        realtimeObject2.value = '';
+                        let realtimeObject3 = new Object();
+                        realtimeObject3.title = '付费';
+
+                        realtimeObject3.value = '';
+                        realtimeObject3.payRate = '';
+                        realtimeObject3.payARPU = '';
+                        realtimeObject3.payARPPU = '';
+
+                        realtimeArrayss.push(realtimeObject1);
+                        realtimeArrayss.push(realtimeObject2);
+                        realtimeArrayss.push(realtimeObject3);
+                        this.weekPercentage = realtimeArrayss;
+                    }
+                } else {
+                    let realtimeArrays = [];
+                    let realtimeObject1 = new Object();
+                    realtimeObject1.title = '活跃';
+                    realtimeObject1.value = '';
+                    realtimeObject1.payRate = '';
+                    realtimeObject1.payARPU = '';
+                    let realtimeObject2 = new Object();
+                    realtimeObject2.title = '新增';
+                    realtimeObject2.payRate = '';
+                    realtimeObject2.payARPU = '';
+                    realtimeObject2.value = '';
+                    let realtimeObject3 = new Object();
+                    realtimeObject3.title = '付费';
+
+                    realtimeObject3.value = '';
+                    realtimeObject3.payRate = '';
+                    realtimeObject3.payARPU = '';
+                    realtimeObject3.payARPPU = '';
+
+                    realtimeArray.push(realtimeObject1);
+                    realtimeArray.push(realtimeObject2);
+                    realtimeArray.push(realtimeObject3);
+                    this.weekPercentage = realtimeArrays;
+                }
+            },
+            yesTableDataProcess: function (data, info, date) {
+                if (data.length > 0) {
+                    let activeNum = 0,
+                        newIntall = 0,
+                        payTotal = 0,
+                        payCount = 0;
+
+                    data.forEach((item) => {
+                        activeNum += item.dauNum;
+                        newIntall += item.installNum;
+                        payTotal += item.payAmount;
+                        payCount += item.payCount;
+
+                        // item.ds = this.weekFunction(item.ds);
+                        // item.payAmount = item.payAmount / this.getStore("currencyRate");
+                        // item.payRate = item.dauNum == 0 ? 0 : (item.payCount * 100 / item.dauNum).toFixed(2);
+                        // item.ARPU = item.dauNum == 0 ? 0 : (item.payAmount / item.dauNum).toFixed(2);
+                        // item.ARPPU = item.payCount == 0 ? 0 : (item.payAmount / item.payCount).toFixed(2);
+                        // item.payInstallAmount = item.payInstallAmount / this.getStore("currencyRate");
+                        // item.payInstallRate = item.installNum == 0 ? 0 : (item.payInstallCount * 100 / item.installNum).toFixed(2);
+                        // item.payInstallARPU = item.installNum == 0 ? 0 : (item.payInstallAmount / item.installNum).toFixed(2);
+                        // item.payInstallARPPU = item.payInstallCount == 0 ? 0 : (item.payInstallAmount / item.payInstallCount).toFixed(2);
+                    });
+                    if (info.length > 0) {
+                        let realtimeArray = [];
+                        let realtimeObject1 = new Object();
+                        realtimeObject1.title = '活跃';
+                        realtimeObject1.value = activeNum;
+                        realtimeObject1.payRate = info[1];
+                        realtimeObject1.payARPU = info[0];
+                        let realtimeObject2 = new Object();
+                        realtimeObject2.title = '新增';
+                        realtimeObject2.payRate = info[3];
+                        realtimeObject2.payARPU = info[2];
+                        realtimeObject2.value = newIntall;
+                        let realtimeObject3 = new Object();
+                        realtimeObject3.title = '付费';
+
+                        realtimeObject3.value = payTotal / this.getStore("currencyRate");
+                        realtimeObject3.payRate = (activeNum == 0 ? 0 : (payCount * 100 / activeNum).toFixed(2) + '%');
+                        realtimeObject3.payARPU = (activeNum == 0 ? 0 : (payTotal / this.getStore("currencyRate") / activeNum).toFixed(2));
+                        realtimeObject3.payARPPU = (payCount == 0 ? 0 : (payTotal / this.getStore("currencyRate") / payCount).toFixed(2));
+
+                        realtimeArray.push(realtimeObject1);
+                        realtimeArray.push(realtimeObject2);
+                        realtimeArray.push(realtimeObject3);
+                        this.yesterdayPercentage = realtimeArray;
+                    } else {
+                        let realtimeArrayss = [];
+                        let realtimeObject1 = new Object();
+                        realtimeObject1.title = '活跃';
+                        realtimeObject1.value = '';
+                        realtimeObject1.payRate = '';
+                        realtimeObject1.payARPU = '';
+                        let realtimeObject2 = new Object();
+                        realtimeObject2.title = '新增';
+                        realtimeObject2.payRate = '';
+                        realtimeObject2.payARPU = '';
+                        realtimeObject2.value = '';
+                        let realtimeObject3 = new Object();
+                        realtimeObject3.title = '付费';
+
+                        realtimeObject3.value = '';
+                        realtimeObject3.payRate = '';
+                        realtimeObject3.payARPU = '';
+                        realtimeObject3.payARPPU = '';
+
+                        realtimeArrayss.push(realtimeObject1);
+                        realtimeArrayss.push(realtimeObject2);
+                        realtimeArrayss.push(realtimeObject3);
+                        this.yesterdayPercentage = realtimeArrayss;
+                    }
+                } else {
+                    let realtimeArrays = [];
+                    let realtimeObject1 = new Object();
+                    realtimeObject1.title = '活跃';
+                    realtimeObject1.value = '';
+                    realtimeObject1.payRate = '';
+                    realtimeObject1.payARPU = '';
+                    let realtimeObject2 = new Object();
+                    realtimeObject2.title = '新增';
+                    realtimeObject2.payRate = '';
+                    realtimeObject2.payARPU = '';
+                    realtimeObject2.value = '';
+                    let realtimeObject3 = new Object();
+                    realtimeObject3.title = '付费';
+
+                    realtimeObject3.value = '';
+                    realtimeObject3.payRate = '';
+                    realtimeObject3.payARPU = '';
+                    realtimeObject3.payARPPU = '';
+
+                    realtimeArray.push(realtimeObject1);
+                    realtimeArray.push(realtimeObject2);
+                    realtimeArray.push(realtimeObject3);
+                    this.yesterdayPercentage = realtimeArrays;
+                }
             },
             makePieChart: function (info) {
                 let dauNumTotal = 0,
@@ -867,7 +1455,7 @@
                     data.forEach((item) => {
                         dauNumSum += item.dauNum;
                         installNumSum += item.installNum;
-                        if (item.os == 'android') {
+                        if (item.os == 'android' || item.os == 'Android') {
                             androidDauNum += item.dauNum;
                             androidInstallNum += item.installNum;
                         }
@@ -883,7 +1471,7 @@
                     return info;
                 }
             },
-            tableDataProcess: function (data, info) {
+            tableDataProcess: function (data, info, date) {
                 if (data.length > 0) {
                     let activeNum = 0,
                         newIntall = 0,
@@ -911,12 +1499,12 @@
                         let realtimeObject1 = new Object();
                         realtimeObject1.title = '活跃';
                         realtimeObject1.value = activeNum;
-                        realtimeObject1.payRate = info[0];
-                        realtimeObject1.payARPU = info[1];
+                        realtimeObject1.payRate = info[1];
+                        realtimeObject1.payARPU = info[0];
                         let realtimeObject2 = new Object();
                         realtimeObject2.title = '新增';
-                        realtimeObject2.payRate = info[2];
-                        realtimeObject2.payARPU = info[3];
+                        realtimeObject2.payRate = info[3];
+                        realtimeObject2.payARPU = info[2];
                         realtimeObject2.value = newIntall;
                         let realtimeObject3 = new Object();
                         realtimeObject3.title = '付费';
@@ -955,7 +1543,7 @@
                         realtimeArrayss.push(realtimeObject3);
                         this.realtimeStatis = realtimeArrayss;
                     }
-                }else {
+                } else {
                     let realtimeArrays = [];
                     let realtimeObject1 = new Object();
                     realtimeObject1.title = '活跃';
@@ -985,6 +1573,12 @@
             saturday: function (data) {
                 if (data) {
                     data.forEach((item, index) => {
+                        if (index === 0) {
+                            item.cellClassName = {ds: 'demo-table-info-cell-age',}
+                        }
+                        if (index === 1) {
+                            item.cellClassName = {ds: 'demo-table-info-cell-age',}
+                        }
                         let week = new Date(item.ds);
                         let dateweek = week.getDay();
                         let i = 7 - dateweek;
@@ -1028,9 +1622,34 @@
                     return data;
                 }
             },
-            f2DI: function (data, date, listData, type) {
+            compare: function (obj1, obj2) {
+                var val1 = obj1.dayOfHour;
+                var val2 = obj2.dayOfHour;
+                if (val1 < val2) {
+                    return -1;
+                } else if (val1 > val2) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            },
+            f2DI: function (data, date, listData, shareDailyResultTypess, type) {
                 let datas = [];
+                if (date == 0) {
+                    shareDailyResultTypess.forEach(info => {
+                        let item = new Object();
+                        if (type == 0) {
+                            item.value = info.dauNum;
+                        } else {
+                            item.value = info.installNum;
+                        }
+                        item.time = info.dayOfHour + '时';
+                        item.type = '昨日';
+                        datas.push(item);
+                    });
+                }
                 if (date == 0 || date == 1) {
+                    listData.sort(this.compare)
                     listData.forEach(info => {
                         let item = new Object();
                         if (type == 0) {
@@ -1039,6 +1658,12 @@
                             item.value = info.installNum;
                         }
                         item.time = info.dayOfHour + '时';
+                        if (date == 0) {
+                            item.type = '今日'
+                        }
+                        if (date == 1) {
+                            item.type = '昨日'
+                        }
                         datas.push(item);
                     });
                 } else {
@@ -1046,10 +1671,16 @@
                         let info = new Object();
                         info.time = this.getTime(index);
                         info.value = item;
+                        if (date == 7) {
+                            info.type = '7日'
+                        }
+                        if (date == 30) {
+                            info.type = '30日'
+                        }
                         datas.push(info);
                     });
                 }
-                if (date == "7" || date == "30" || date == "0") {
+                if (date == "7" || date == "30") {
                     //该方法会改变原来的数组，而不会创建新的数组
                     datas.reverse();
                 }
@@ -1091,7 +1722,7 @@
                 }
                 return ds;
             },
-            makeCavas: (data, date) => {
+            makeCavas: (data, date, yesterdayShareDaily,isPayType) => {
                 if (data) {
                     if (date == 0) {
                         data.sort(function (a, b) {
@@ -1099,69 +1730,107 @@
                         });
                     }
                     let handelPayCount = [];
-                    data.forEach((item, index) => {
-                        let infopayCount = new Object();
-                        if (date != 7 && date != 30) {
+                    let yeshandelPayCount = [];
+                    if (date == 0) {
+                        data.forEach((item, index) => {
+                            let infopayCount = new Object();
                             infopayCount.time = item.dayOfHour + '时';
-                        } else {
-                            infopayCount.time = (item.ds).substr(5, 5);
-                        }
-                        infopayCount.value = item.payCount;
-                        infopayCount.type = '付费人数';
-                        handelPayCount.push(infopayCount);
-                        let infopayAmount = new Object();
-                        if (date != 7 && date != 30) {
-                            infopayAmount.time = item.dayOfHour + '时';
-                        } else {
-                            infopayAmount.time = (item.ds).substr(5, 5);
-                        }
-                        infopayAmount.value = item.payAmount;
-                        infopayAmount.type = '付费金额';
-                        handelPayCount.push(infopayAmount);
-                        let infopayTimes = new Object();
-                        if (date != 7 && date != 30) {
-                            infopayTimes.time = item.dayOfHour + '时';
-                        } else {
-                            infopayTimes.time = (item.ds).substr(5, 5);
-                        }
-                        infopayTimes.value = item.payTimes;
-                        infopayTimes.type = '付费次数';
-                        handelPayCount.push(infopayTimes);
-                        let infopayInstallCount = new Object();
-                        if (date != 7 && date != 30) {
-                            infopayInstallCount.time = item.dayOfHour + '时';
-                        } else {
-                            infopayInstallCount.time = (item.ds).substr(5, 5);
-                        }
-                        infopayInstallCount.value = item.payInstallCount;
-                        infopayInstallCount.type = '安装付费人数';
-                        handelPayCount.push(infopayInstallCount);
-                        let infopayInstallAmount = new Object();
-                        if (date != 7 && date != 30) {
-                            infopayInstallAmount.time = item.dayOfHour + '时';
-                        } else {
-                            infopayInstallAmount.time = (item.ds).substr(5, 5);
-                        }
-                        infopayInstallAmount.value = item.payInstallAmount;
-                        infopayInstallAmount.type = '安装付费金额';
-                        handelPayCount.push(infopayInstallAmount);
-                        let infoPayInstallTimes = new Object();
-                        if (date != 7 && date != 30) {
-                            infoPayInstallTimes.time = item.dayOfHour + '时';
-                        } else {
-                            infoPayInstallTimes.time = (item.ds).substr(5, 5);
-                        }
-                        infoPayInstallTimes.value = item.payInstallTimes;
-                        infoPayInstallTimes.type = '安装付费次数';
-                        handelPayCount.push(infoPayInstallTimes);
-                    });
+                            if (parseInt(isPayType) == 0) {
+                                infopayCount.value = item.payTimes;
+                            } else if (parseInt(isPayType)  == 1) {
+                                infopayCount.value = item.payAmount;
+                            } else {
+                                infopayCount.value = item.payCount;
+                            }
+                            infopayCount.type = '今天';
+                            handelPayCount.push(infopayCount);
+                        })
+                        yesterdayShareDaily.forEach((item, index) => {
+                            let infopayCount = new Object();
+                            infopayCount.time = item.dayOfHour + '时';
+                            if (parseInt(isPayType) == 0) {
+                                infopayCount.value = item.payTimes;
+                            } else if (parseInt(isPayType)  == 1) {
+                                infopayCount.value = item.payAmount;
+                            } else {
+                                infopayCount.value = item.payCount;
+                            }
+                            infopayCount.type = '昨天';
+                            yeshandelPayCount.push(infopayCount);
+                        })
+                        yeshandelPayCount.reverse();
+                        handelPayCount = handelPayCount.concat(yeshandelPayCount)
+                    } else {
+                        data.forEach((item, index) => {
+                            let infopayCount = new Object();
+                            if (date != 7 && date != 30) {
+                                infopayCount.time = item.dayOfHour + '时';
+                            } else {
+                                infopayCount.time = (item.ds).substr(5, 5);
+                            }
+                            infopayCount.value = item.payCount;
+                            infopayCount.type = '付费人数';
+                            handelPayCount.push(infopayCount);
+                            let infopayAmount = new Object();
+                            if (date != 7 && date != 30) {
+                                infopayAmount.time = item.dayOfHour + '时';
+                            } else {
+                                infopayAmount.time = (item.ds).substr(5, 5);
+                            }
+                            infopayAmount.value = item.payAmount;
+                            infopayAmount.type = '付费金额';
+                            handelPayCount.push(infopayAmount);
+                            let infopayTimes = new Object();
+                            if (date != 7 && date != 30) {
+                                infopayTimes.time = item.dayOfHour + '时';
+                            } else {
+                                infopayTimes.time = (item.ds).substr(5, 5);
+                            }
+                            infopayTimes.value = item.payTimes;
+                            infopayTimes.type = '付费次数';
+                            handelPayCount.push(infopayTimes);
+                            // let infopayInstallCount = new Object();
+                            // if (date != 7 && date != 30) {
+                            //     infopayInstallCount.time = item.dayOfHour + '时';
+                            // } else {
+                            //     infopayInstallCount.time = (item.ds).substr(5, 5);
+                            // }
+                            // infopayInstallCount.value = item.payInstallCount;
+                            // infopayInstallCount.type = '安装付费人数';
+                            // handelPayCount.push(infopayInstallCount);
+                            // let infopayInstallAmount = new Object();
+                            // if (date != 7 && date != 30) {
+                            //     infopayInstallAmount.time = item.dayOfHour + '时';
+                            // } else {
+                            //     infopayInstallAmount.time = (item.ds).substr(5, 5);
+                            // }
+                            // infopayInstallAmount.value = item.payInstallAmount;
+                            // infopayInstallAmount.type = '安装付费金额';
+                            // handelPayCount.push(infopayInstallAmount);
+                            // let infoPayInstallTimes = new Object();
+                            // if (date != 7 && date != 30) {
+                            //     infoPayInstallTimes.time = item.dayOfHour + '时';
+                            // } else {
+                            //     infoPayInstallTimes.time = (item.ds).substr(5, 5);
+                            // }
+                            // infoPayInstallTimes.value = item.payInstallTimes;
+                            // infoPayInstallTimes.type = '安装付费次数';
+                            // handelPayCount.push(infoPayInstallTimes);
+                        });
+                    }
                     if (date == 7 || date == 30 || date == 0) {
                         handelPayCount.reverse();
                     }
                     return handelPayCount;
                 }
             },
-        },
+            rowClassName(row, index) {
+                if (index === 1) {
+                    return 'demo-table-info-cell-age';
+                }
+            }
+        }
+        ,
         mounted() {
             this.surveyOneLineChart();
             this.surveyManyLineChart();
@@ -1234,6 +1903,15 @@
     }
 
     .isRed {
-        color: red
+        color: #00FF00
+    }
+
+    .refresh:hover {
+        cursor: pointer
+    }
+
+    .ivu-table .demo-table-info-cell-oneRetentionPercentage {
+        background-color: #ff6600;
+        color: #00FF00;
     }
 </style>

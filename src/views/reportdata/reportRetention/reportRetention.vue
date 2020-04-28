@@ -6,6 +6,9 @@
                 <Radio style="margin: 10px 10px" label="1">设备</Radio>
             </RadioGroup>
         </div>
+        <div style="float: right;" class="refresh">
+            <Icon size="30" color="#4876FF" type="ios-ionic-outline" @click="init()"/>
+            <span>刷新</span></div>
         <div>
             <RadioGroup v-model="phone" type="button" @on-change="init()">
                 <Radio style="margin: 10px 10px" label="0">
@@ -115,7 +118,7 @@
         components: {vTitleHead},
         data() {
             return {
-                loadRetention:true,
+                loadRetention: true,
                 isretentionLine: true,
                 isShowCondition: false,
                 isShow: true,
@@ -725,10 +728,10 @@
                             item.creative = creativeMap.get(item.creative) === undefined ? item.creative : creativeMap.get(item.creative);
                             item.client = clientMap.get(String(item.clientid)) === undefined ? item.client : clientMap.get(String(item.clientid));
                         })
-                        let handelRetentionOne = this.makeRetentionOne(retentionList[5]);
+                        let handelRetentionOne = this.makeRetentionOne(retentionList[0]);
                         this.retentionList = retentionList;
                         this.handelRetentionOne = handelRetentionOne;
-                        this.retentionTitle = retentionList[5].ds + '留存趋势';
+                        this.retentionTitle = retentionList[0].ds + '留存趋势';
                         this.surveyOneLine.changeData(handelRetentionOne);
                         this.retentionLine.changeData(this.retentionAverage);
                     }
@@ -1162,5 +1165,9 @@
 
     .isshowLine {
         position: absolute;
+    }
+
+    .refresh:hover {
+        cursor: pointer
     }
 </style>
