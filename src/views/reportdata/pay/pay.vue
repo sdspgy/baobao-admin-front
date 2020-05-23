@@ -27,12 +27,16 @@
                 </RadioGroup>
             </div>
             <div>
-                <RadioGroup v-model="searchForm.day" type="button" @on-change="init()">>
+                <RadioGroup v-model="searchForm.day" type="button" @on-change="dayEvent()">>
                     <Radio style="margin: 10px 10px" label="0">今天</Radio>
                     <Radio style="margin: 10px 10px" label="1">昨天</Radio>
                     <Radio style="margin: 10px 10px" label="7">7天</Radio>
                     <Radio style="margin: 10px 10px" label="30">30天</Radio>
                 </RadioGroup>
+                <DatePicker v-model="timeSection" :options="options" confirm @on-ok="timeSectionEvent()"
+                            type="daterange" show-week-numbers
+                            placement="bottom-end" placeholder="选择起始日期"
+                            style="margin-left:20px;width: 200px"></DatePicker>
             </div>
             <div>
                 <RadioGroup v-model="key" type="button" @on-change="showclients(key)">>
@@ -64,7 +68,7 @@
         <div style="margin-top: 20px">
             <vTitleHead :inputName="payTable"></vTitleHead>
             <Row>
-                <Table :loading="loadPay" height="420"  border :columns="columnspro" :data="data" sortable="custom"
+                <Table :loading="loadPay" height="420" border :columns="columnspro" :data="data" sortable="custom"
                        ref="table"></Table>
                 <!-- <Table :columns="exportColumns" :data="exportData" ref="exportTable" style="display:none"></Table> -->
             </Row>
@@ -297,7 +301,7 @@
                             align: 'center'
                         }
                     ],
-                loadPay:true,
+                loadPay: true,
                 isShow: true,
                 payLine: '付费趋势',
                 payTable: '付费详情(元)',
@@ -575,9 +579,36 @@
                 showcreative: false,
                 showclient: false,
                 showcc: true,
+                timeSection: [],
+                startTime: 0,
+                overTime: 0,
+                options: {
+                    disabledDate(date) {
+                        return date && date.valueOf() >= Date.now() - 86400000;
+                    }
+                },
             };
         },
         methods: {
+            dayEvent() {
+                this.timeSection = [];
+                this.startTime = 0;
+                this.overTime = 0;
+                this.searchForm.overTime = 0;
+                this.init()
+            },
+            timeSectionEvent() {
+                let nowTime = new Date()
+                this.overTime = 0;
+                this.startTime = 0;
+                if (nowTime - this.timeSection[0] > 0) {
+                    this.startTime = parseInt((nowTime - this.timeSection[0]) / (24 * 60 * 60 * 1000))
+                }
+                if (nowTime - this.timeSection[1] > 0) {
+                    this.overTime = parseInt((nowTime - this.timeSection[1]) / (24 * 60 * 60 * 1000))
+                }
+                this.queryAllServer()
+            },
             init() {
                 this.loadPay = true;
                 if (this.getStore('parentId') == 0) {
@@ -609,11 +640,16 @@
                 if (this.searchForm.creative == null) {
                     this.handleColumns(4)
                 }
+                if (this.startTime !== 0) {
+                    this.searchForm.day = this.startTime
+                }
+                if (this.overTime !== 0) {
+                    this.searchForm.overTime = this.overTime
+                }
                 queryAllPayReq(this.searchForm).then(res => {
                     this.loadPay = false;
                     if (res.success) {
                         this.data = res.msg;
-                        debugger
                         this.sharePayResultTypesCC = res.sharePayResultTypesCC;
                         this.creatives = res.creatives;
                         this.clients = res.clients;
@@ -658,7 +694,6 @@
                     os: this.searchForm.os,
                 }
                 queryPayRegisteredRevenuePercentage(deteday).then(res => {
-                    // this.loading = false;
                     if (res.success) {
                         let a = this.tableDataProcessa(res.msg);
                         let b = this.tableDataProcessb(res.msgOS);
@@ -852,7 +887,7 @@
                     let handelPayCount = [];
                     data.forEach((item, index) => {
                         let infopayCount = new Object();
-                        if (date != 7 && date != 30) {
+                        if (date == 0 || date == 1) {
                             infopayCount.time = item.dayOfHour + '时';
                         } else {
                             infopayCount.time = (item.ds).substr(5, 5);
@@ -861,7 +896,7 @@
                         infopayCount.type = '付费人数';
                         handelPayCount.push(infopayCount);
                         let infopayAmount = new Object();
-                        if (date != 7 && date != 30) {
+                        if (date == 0 || date == 1) {
                             infopayAmount.time = item.dayOfHour + '时';
                         } else {
                             infopayAmount.time = (item.ds).substr(5, 5);
@@ -870,7 +905,7 @@
                         infopayAmount.type = '付费金额';
                         handelPayCount.push(infopayAmount);
                         let infopayTimes = new Object();
-                        if (date != 7 && date != 30) {
+                        if (date == 0 || date == 1) {
                             infopayTimes.time = item.dayOfHour + '时';
                         } else {
                             infopayTimes.time = (item.ds).substr(5, 5);
@@ -879,7 +914,7 @@
                         infopayTimes.type = '付费次数';
                         handelPayCount.push(infopayTimes);
                         let infopayInstallCount = new Object();
-                        if (date != 7 && date != 30) {
+                        if (date == 0 || date == 1) {
                             infopayInstallCount.time = item.dayOfHour + '时';
                         } else {
                             infopayInstallCount.time = (item.ds).substr(5, 5);
@@ -888,7 +923,7 @@
                         infopayInstallCount.type = '安装付费人数';
                         handelPayCount.push(infopayInstallCount);
                         let infopayInstallAmount = new Object();
-                        if (date != 7 && date != 30) {
+                        if (date == 0 || date == 1) {
                             infopayInstallAmount.time = item.dayOfHour + '时';
                         } else {
                             infopayInstallAmount.time = (item.ds).substr(5, 5);
@@ -897,7 +932,7 @@
                         infopayInstallAmount.type = '安装付费金额';
                         handelPayCount.push(infopayInstallAmount);
                         let infoPayInstallTimes = new Object();
-                        if (date != 7 && date != 30) {
+                        if (date == 0 || date == 1) {
                             infoPayInstallTimes.time = item.dayOfHour + '时';
                         } else {
                             infoPayInstallTimes.time = (item.ds).substr(5, 5);
@@ -906,7 +941,7 @@
                         infoPayInstallTimes.type = '安装付费次数';
                         handelPayCount.push(infoPayInstallTimes);
                     });
-                    if (date == 7 || date == 30 || date == 0) {
+                    if (date != 1) {
                         handelPayCount.reverse();
                     }
                     return handelPayCount;
@@ -922,7 +957,7 @@
                         item.creative = creativeMap.get(item.creative) === undefined ? item.creative : creativeMap.get(item.creative);
                         item.payRate = item.dauNum == 0 ? 0 : (item.payCount * 100 / item.dauNum).toFixed(2);
                         item.ARPPU = item.payCount == 0 ? 0 : (item.payAmount / item.payCount).toFixed(2);
-                        item.payInstallRate = item.installNum == 0 ? 0 : (item.payInstallCount * 100 / item.installNum).toFixed(2) ;
+                        item.payInstallRate = item.installNum == 0 ? 0 : (item.payInstallCount * 100 / item.installNum).toFixed(2);
                         item.payInstallARPU = item.installNum == 0 ? 0 : (item.payInstallAmount / item.installNum).toFixed(2);
                         item.payInstallARPPU = item.payInstallCount == 0 ? 0 : (item.payInstallAmount / item.payInstallCount).toFixed(2);
 

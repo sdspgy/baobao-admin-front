@@ -28,12 +28,16 @@
                 </RadioGroup>
             </div>
             <div>
-                <RadioGroup v-model="searchForm.day" type="button" @on-change="init()">>
+                <RadioGroup v-model="searchForm.day" type="button" @on-change="dayEvent()">>
                     <Radio style="margin: 10px 10px" label="0">今天</Radio>
                     <Radio style="margin: 10px 10px" label="1">昨天</Radio>
                     <Radio style="margin: 10px 10px" label="7">7天</Radio>
                     <Radio style="margin: 10px 10px" label="30">30天</Radio>
                 </RadioGroup>
+                <DatePicker v-model="timeSection" :options="options" confirm @on-ok="timeSectionEvent()"
+                            type="daterange" show-week-numbers
+                            placement="bottom-end" placeholder="选择起始日期"
+                            style="margin-left:20px;width: 200px"></DatePicker>
             </div>
             <div>
                 <RadioGroup v-model="key" type="button" @on-change="showclients(key)">>
@@ -64,7 +68,7 @@
         <div style="margin-top: 20px">
             <vTitleHead :inputName="installTable"></vTitleHead>
             <Row>
-                <Table  height="405" :loading="loadingAdd" border :columns="columnspro" :data="data" sortable="custom"
+                <Table height="405" :loading="loadingAdd" border :columns="columnspro" :data="data" sortable="custom"
                        ref="table"></Table>
             </Row>
         </div>
@@ -90,7 +94,7 @@
         comments: {},
         data() {
             return {
-                loadingAdd:true,
+                loadingAdd: true,
                 isShow: true,
                 installTable: '新增数据',
                 installTables: '新增数据(Android/iOS)',
@@ -271,10 +275,37 @@
                 key: 'all',
                 showcreative: false,
                 showclient: false,
-                showcc: true
+                showcc: true,
+                timeSection: [],
+                startTime: 0,
+                overTime: 0,
+                options: {
+                    disabledDate(date) {
+                        return date && date.valueOf() >= Date.now() - 86400000;
+                    }
+                },
             };
         },
         methods: {
+            dayEvent() {
+                this.timeSection = [];
+                this.startTime = 0;
+                this.overTime = 0;
+                this.searchForm.overTime = 0;
+                this.init()
+            },
+            timeSectionEvent() {
+                let nowTime = new Date()
+                this.overTime = 0;
+                this.startTime = 0;
+                if (nowTime - this.timeSection[0] > 0) {
+                    this.startTime = parseInt((nowTime - this.timeSection[0]) / (24 * 60 * 60 * 1000))
+                }
+                if (nowTime - this.timeSection[1] > 0) {
+                    this.overTime = parseInt((nowTime - this.timeSection[1]) / (24 * 60 * 60 * 1000))
+                }
+                this.queryAllServer()
+            },
             init() {
                 this.loadingAdd = true;
                 if (this.getStore('parentId') == 0) {
@@ -300,6 +331,12 @@
                 }
                 if (this.searchForm.creative == null) {
                     this.handleColumns(4)
+                }
+                if (this.startTime !== 0) {
+                    this.searchForm.day = this.startTime
+                }
+                if (this.overTime !== 0) {
+                    this.searchForm.overTime = this.overTime
                 }
                 queryAllPayReq(this.searchForm).then(res => {
                     this.loadingAdd = false;
@@ -476,7 +513,7 @@
                         datas.push(info);
                     });
                 }
-                if (date == "7" || date == "30" || date == "0") {
+                if (date != "1") {
                     //该方法会改变原来的数组，而不会创建新的数组
                     datas.reverse();
                 }

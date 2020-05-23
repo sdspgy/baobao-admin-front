@@ -1,307 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dea0782d-bfdd-4aaa-af17-fd09b96e7bed" name="Default Changelist" comment="zhiqiu_20200415">
-      <change afterPath="$PROJECT_DIR$/src/views/reportdata/real/real.vue" afterDir="false" />
+    <list default="true" id="dea0782d-bfdd-4aaa-af17-fd09b96e7bed" name="Default Changelist" comment="zhiqiu_20200427">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mengshen/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mengshen/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/css/chunk-01a13e17.3219f193.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/css/chunk-118a36af.1d7807df.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/css/chunk-24193c91.41949f30.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/css/chunk-305b6230.f52203e4.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/css/chunk-3c6b947a.265045f0.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/css/chunk-40b0f58f.5b1c44f6.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/css/chunk-40b0f58f.5b1c44f6.css.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/css/chunk-42d499ef.5f4ba2eb.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/css/chunk-f31ee900.1d7807df.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/app.38456852.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/app.38456852.js.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-01a13e17.ebcd97ae.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-049941da.1b88af1e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-071f9806.2b7e6bf1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-071f9806.2b7e6bf1.js.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-093eef92.ccb3c2a3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-0a41432e.69deecee.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-0f4b846e.c870f5bf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-10d67278.4dbc16e5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-118a36af.d9f2bb81.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-118a36af.d9f2bb81.js.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-11b06ca9.81867129.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-1692b538.15f7a0d5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-1ac96db2.478d28d0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-1ac96db2.478d28d0.js.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-1ba9b423.e1129524.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-1dd3a360.0ed9683b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-24193c91.7a2e5e8a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-24193c91.7a2e5e8a.js.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-2d0a333a.37011a3b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-2d0a4b3e.a0043527.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-2d0b3229.32b62b0d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-2d0b65d6.77c5ff32.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-2d0bdbb3.3ab1cc31.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-2d0bff71.f4a1980c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-2d0c1f47.24fc1e55.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-2d0c93d3.6b552eed.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-2d0cf678.bc0aaea7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-2d0cf678.bc0aaea7.js.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-2d0cfec0.104039b7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-2d0cfec0.104039b7.js.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-2d20fb18.768e7411.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-2d212b4a.ab4edba8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-2d212b4a.ab4edba8.js.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-2d2176dc.4a664e91.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-2d217e47.a42033dd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-2d21b49d.21ce4e32.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-2d21d435.782b6aed.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-2d237ca6.24ed7d65.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-305b6230.e57689fc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-305b6230.e57689fc.js.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-30dcddac.2f298b9e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-34076435.0bb8fb9c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-34076435.0bb8fb9c.js.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-3c6b947a.3ee0b19c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-40b0f58f.3ab472b1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-42d499ef.672ed8d1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-42d499ef.672ed8d1.js.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-46080d9e.1c8ff2df.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-4807ebfa.b6deb3db.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-48da05d1.6f5c6836.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-4de07ef0.4e08a0b0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-4ff53a68.de2ddb28.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-50214894.ebe3575c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-5bf39aa2.c9bad47e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-60fbdc4b.c45917d5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-6d4c7029.47d31c6c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-73036822.8ceca5e2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-73036822.8ceca5e2.js.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-83941706.80eb92e8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-8b359160.66cac0cc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-8d965cd6.0aade1c6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-9146101e.780f9960.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-9146101e.780f9960.js.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-95f8505c.fb577dce.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-95f8505c.fb577dce.js.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-9d4e083c.432ba833.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-9d4e083c.432ba833.js.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-ca00473a.398457ed.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-e201f9ec.237eb96c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-f31ee900.8cf9cd7d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-f31ee900.8cf9cd7d.js.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-f6446a4e.f9001f16.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-vendors.f4e0a91b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mengshen/static/js/chunk-vendors.f4e0a91b.js.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/0971bd51041ea6a6c84134fc552afaf6.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/0971bd51041ea6a6c84134fc552afaf6.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/207845f5fc4f348f3d1e3d77664eda86.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/207845f5fc4f348f3d1e3d77664eda86.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/20eeae3b210758fa90400b4fa98baff1.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/20eeae3b210758fa90400b4fa98baff1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/2e8f91f199071c0248cc4d81ddef08e8.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/2e8f91f199071c0248cc4d81ddef08e8.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/2f0972172f6c800ba9a07a1c6e65ef13.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/2f0972172f6c800ba9a07a1c6e65ef13.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/498bab0fb67efd5f7042b9e786b15303.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/498bab0fb67efd5f7042b9e786b15303.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mengshen/static/css/chunk-e201f9ec.4fe4b699.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/534f74b2408d20d3c3c6e60729c15285.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/534f74b2408d20d3c3c6e60729c15285.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/6570a1bb2bfe7db65eee08506afa94ac.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/6570a1bb2bfe7db65eee08506afa94ac.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/7049934d7d72f54351209035367f7305.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/7049934d7d72f54351209035367f7305.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/771148820aac9b7be03168a6226f7068.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/771148820aac9b7be03168a6226f7068.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/8d06bead1a3ec33e4523d2a9b6bdfcd8.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/8d06bead1a3ec33e4523d2a9b6bdfcd8.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/911774ace098852f2623b37f36401c1d.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/911774ace098852f2623b37f36401c1d.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/96f2893e2c16487df0ba7d349640c1ce.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/96f2893e2c16487df0ba7d349640c1ce.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/a1e8bb6718cfc81f2a32131857ed9755.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/a1e8bb6718cfc81f2a32131857ed9755.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/9c34dbe68230ffedd804f3dbb87c5e09.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/9c34dbe68230ffedd804f3dbb87c5e09.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/b74558ea8715b2a1ebbe00e777c00e37.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/b74558ea8715b2a1ebbe00e777c00e37.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/c55bd5452ca0a14e92e5ba8cce14ecc9.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/c55bd5452ca0a14e92e5ba8cce14ecc9.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/c89b22f845c45c533339228989d4f2dc.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/c89b22f845c45c533339228989d4f2dc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/d1e72c50389ce5306a9108611bd5559d.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/d1e72c50389ce5306a9108611bd5559d.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/dca55d3b68fa12a9aaaa682e349844aa.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/dca55d3b68fa12a9aaaa682e349844aa.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/e953d8cc1732185a5434a08653519e8d.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/e953d8cc1732185a5434a08653519e8d.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/eab520b5ed8bc4449018f554df57b5ae.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/eab520b5ed8bc4449018f554df57b5ae.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/eacd37efae03d23cfa77f85e21e4c065.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/eacd37efae03d23cfa77f85e21e4c065.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/fad759515f5f9538f2710bfc1037f195.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/fad759515f5f9538f2710bfc1037f195.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/0491794c83c40d6cdb1fd91fb1a4f92c.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/0491794c83c40d6cdb1fd91fb1a4f92c.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/0901243a0ca8c48c282a0c9a39358f99.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/0901243a0ca8c48c282a0c9a39358f99.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/1a4a51df847e3e036f4499d2c3a24956.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/1a4a51df847e3e036f4499d2c3a24956.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/203763096949b4ba12e1a86925bb99cc.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/203763096949b4ba12e1a86925bb99cc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/2196d5e7cb8a71ef358ba8791ee70df3.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/2196d5e7cb8a71ef358ba8791ee70df3.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/22568c002af0639438d90bf458bfed1c.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/22568c002af0639438d90bf458bfed1c.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/233fcd5d9df9f68f4b09a2f47f9fea1e.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/233fcd5d9df9f68f4b09a2f47f9fea1e.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/2539c0c2eb20e1050fcca435567b9781.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/2539c0c2eb20e1050fcca435567b9781.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/29dd6d274c9bb0f5d3db07d87c7ab1e8.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/29dd6d274c9bb0f5d3db07d87c7ab1e8.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/2b078fc54ff2ac5e2461537f6e0d726e.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/2b078fc54ff2ac5e2461537f6e0d726e.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/2d9837dde64c9f17027b8932197fa834.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/2d9837dde64c9f17027b8932197fa834.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/2da662acd7e745468e6542d137b68d8c.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/2da662acd7e745468e6542d137b68d8c.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/348c17c32cd51d294817aba7e64d8032.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/348c17c32cd51d294817aba7e64d8032.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/3ca5ff92ed21aa5dff9cde07391c1f5a.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/3ca5ff92ed21aa5dff9cde07391c1f5a.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/3cf67a99f5754939168c7a3447092e77.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/3cf67a99f5754939168c7a3447092e77.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/40bcf6debb242c2dfafe7703a0c126c9.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/40bcf6debb242c2dfafe7703a0c126c9.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/43b6a284233feca74be5504a39878f74.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/43b6a284233feca74be5504a39878f74.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/43de116a9df8650a62099aa2e666e4b1.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/43de116a9df8650a62099aa2e666e4b1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/4dcd59cee8c4b0c69196983a1aeabe6e.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/4dcd59cee8c4b0c69196983a1aeabe6e.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/4f35d7079ccb4547e8d3955f26083a24.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/4f35d7079ccb4547e8d3955f26083a24.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/580e370f3588be6620e9c1a1cb3c5bfa.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/580e370f3588be6620e9c1a1cb3c5bfa.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/59149d63975ea215c411b56629fc4254.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/59149d63975ea215c411b56629fc4254.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/685eb98e72cf389f4a6f38df7ed4040a.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/685eb98e72cf389f4a6f38df7ed4040a.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/6a3b96e569e1a369ec5863f60d4d5dfe.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/6a3b96e569e1a369ec5863f60d4d5dfe.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/6adbbf64347702656ef6f810918ff31f.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/6adbbf64347702656ef6f810918ff31f.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/6ddbcdc44b3307210afb285754ac3ddc.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/6ddbcdc44b3307210afb285754ac3ddc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/74ed0a94e20608f68e769fe392cc5fd6.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/74ed0a94e20608f68e769fe392cc5fd6.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/772d28fd0b304a485c2158b194600206.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/772d28fd0b304a485c2158b194600206.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/78d4c5751e10ca72205c36c61d8a6ad5.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/78d4c5751e10ca72205c36c61d8a6ad5.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/7e5c12b8fffbfc2eeae292b0aef05fb8.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/7e5c12b8fffbfc2eeae292b0aef05fb8.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/8aedc0cbfdd31509b50456199dd9b247.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/8aedc0cbfdd31509b50456199dd9b247.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/8bb2815a2fb77ddba2d2d32360c537ee.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/8bb2815a2fb77ddba2d2d32360c537ee.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/8e7471ddc7492c4d31b07b325405e117.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/8e7471ddc7492c4d31b07b325405e117.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/9b4f7f027f7abc379048cc6965feee36.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/9b4f7f027f7abc379048cc6965feee36.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/9b7f13353948827f3d08ae21c25c5e46.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/9b7f13353948827f3d08ae21c25c5e46.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/9e739dc5c66210292c84dc65104776d1.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/9e739dc5c66210292c84dc65104776d1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/a1bab7d0e36d34a3e2658347cf0978e5.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/a1bab7d0e36d34a3e2658347cf0978e5.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/a2abd6b1e69cc1985b34660bbc0ab7fd.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/a2abd6b1e69cc1985b34660bbc0ab7fd.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/a80c81c489e16acb784ceecb213bc0e4.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/a80c81c489e16acb784ceecb213bc0e4.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/a92fa0f92abfbf7b014a3bbfb058bdce.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/a92fa0f92abfbf7b014a3bbfb058bdce.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/a9815fe67d79284631bc07dcab5ef930.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/a9815fe67d79284631bc07dcab5ef930.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/b21d2a060c5a7b8fd50aba3ed0c242db.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/b21d2a060c5a7b8fd50aba3ed0c242db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/b683bc54a31a5bf2c51397b459102cbb.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/b683bc54a31a5bf2c51397b459102cbb.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/b9be471d980ef11c40beddd64c5e43a7.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/b9be471d980ef11c40beddd64c5e43a7.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/bae2ea8816641abae34858c869cf05e3.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/bae2ea8816641abae34858c869cf05e3.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/c1f69d7c36a61f7d638ac773812f6dc9.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/c1f69d7c36a61f7d638ac773812f6dc9.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/c66d23f0862c65acaa86fe099c869720.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/c66d23f0862c65acaa86fe099c869720.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/cb3b73e083f9efa32967440b3d215557.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/cb3b73e083f9efa32967440b3d215557.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/cdccc32d608250f30ad4e2083c064732.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/cdccc32d608250f30ad4e2083c064732.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/cfc34c1827c23ca4ff2f738de0152e09.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/cfc34c1827c23ca4ff2f738de0152e09.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/d99feda0be025c8d84869d9cf6896fbc.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/d99feda0be025c8d84869d9cf6896fbc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/dde1c66829d80526758e380053b3eb24.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/dde1c66829d80526758e380053b3eb24.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/de6931bc54bf32b36fbf14ec1f431b6d.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/de6931bc54bf32b36fbf14ec1f431b6d.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/e566c7bdde73b836329c8cd6c51b9480.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/e566c7bdde73b836329c8cd6c51b9480.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/e60f8ef1ca229af11b52579448cc0860.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/e60f8ef1ca229af11b52579448cc0860.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/ec1d3430c3069af7c18f73351ccfe376.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/ec1d3430c3069af7c18f73351ccfe376.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/eeb85132d2f4652e7d7a52a94c916692.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/eeb85132d2f4652e7d7a52a94c916692.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/f2986b08a9eea01349f0b3280a7f9f87.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/f2986b08a9eea01349f0b3280a7f9f87.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/f4d0da094af115dd55205926c3a4306e.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/f4d0da094af115dd55205926c3a4306e.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/f58a603be2fb4588d1328c5a6e8d44f5.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/f58a603be2fb4588d1328c5a6e8d44f5.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/f914a936eabbc9a171645a8ce63dd649.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/f914a936eabbc9a171645a8ce63dd649.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/fcf89e9ea6277b6592f7dc7d7c0dbfe7.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/fcf89e9ea6277b6592f7dc7d7c0dbfe7.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/dist/apexcharts.amd.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/dist/apexcharts.amd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/dist/apexcharts.common.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/dist/apexcharts.common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/dist/apexcharts.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/dist/apexcharts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/dist/apexcharts.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/dist/apexcharts.esm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/dist/apexcharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/dist/apexcharts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/dist/apexcharts.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/dist/apexcharts.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/de.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/el.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/el.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/es.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/es.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/fr.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/fr.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/hi.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/hi.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/hr.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/hr.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/hy.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/hy.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/id.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/id.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/it.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/it.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/pt-br.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/pt-br.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/ru.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/tr.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/tr.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/ua.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/dist/locales/ua.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/apexcharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/apexcharts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/assets/apexcharts.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/assets/apexcharts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/charts/Bar.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/charts/Bar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/charts/BarStacked.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/charts/BarStacked.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/charts/CandleStick.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/charts/CandleStick.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/charts/HeatMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/charts/HeatMap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/charts/Line.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/charts/Line.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/charts/Pie.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/charts/Pie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/charts/Radar.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/charts/Radar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/charts/Radial.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/charts/Radial.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/charts/RangeBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/charts/RangeBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/charts/Scatter.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/charts/Scatter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/de.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/el.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/el.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/es.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/es.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/fr.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/fr.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/hi.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/hi.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/hr.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/hr.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/hy.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/hy.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/id.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/id.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/ko.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/pt-br.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/pt-br.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/ru.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/tr.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/tr.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/ua.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/locales/ua.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Animations.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Animations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Annotations.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Base.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Base.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Core.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Core.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/CoreUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/CoreUtils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/DataLabels.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/DataLabels.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Dimensions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Exports.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Exports.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Fill.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Fill.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Filters.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Filters.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Formatters.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Formatters.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Graphics.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Graphics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Legend.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Markers.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Markers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Range.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Range.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Responsive.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Responsive.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Scales.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Scales.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Series.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Series.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Theme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/TimeScale.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/TimeScale.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/TitleSubtitle.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/TitleSubtitle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Toolbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/Toolbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/ZoomPanSelection.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/ZoomPanSelection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/axes/AxesUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/axes/AxesUtils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/axes/Grid.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/axes/Grid.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/axes/XAxis.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/axes/XAxis.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/axes/YAxis.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/axes/YAxis.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/settings/Config.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/settings/Config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/settings/Defaults.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/settings/Defaults.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/settings/Globals.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/settings/Globals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/settings/Options.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/settings/Options.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/tooltip/AxesTooltip.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/tooltip/AxesTooltip.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/tooltip/Intersect.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/tooltip/Intersect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/tooltip/Labels.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/tooltip/Labels.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/tooltip/Marker.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/tooltip/Marker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/tooltip/Position.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/tooltip/Position.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/tooltip/Tooltip.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/tooltip/Tooltip.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/tooltip/Utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/modules/tooltip/Utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/svgjs/svg.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/svgjs/svg.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/utils/ClassListPolyfill.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/utils/DateTime.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/utils/DateTime.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/utils/DetectElementResize.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/utils/DetectElementResize.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/src/utils/Utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/src/utils/Utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/apexcharts/types/apexcharts.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/apexcharts/types/apexcharts.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/promise-polyfill/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/promise-polyfill/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/promise-polyfill/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/promise-polyfill/dist/polyfill.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/promise-polyfill/dist/polyfill.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/promise-polyfill/lib/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/promise-polyfill/lib/polyfill.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/promise-polyfill/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/promise-polyfill/src/finally.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/promise-polyfill/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/promise-polyfill/src/polyfill.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/svg.select.js/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/svg.select.js/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/svg.select.js/dist/svg.select.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/svg.select.js/dist/svg.select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/svg.select.js/dist/svg.select.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/svg.select.js/dist/svg.select.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/svg.select.js/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/svg.select.js/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-apexcharts/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/vue-apexcharts/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-apexcharts/dist/vue-apexcharts.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/vue-apexcharts/dist/vue-apexcharts.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-apexcharts/dist/vue-apexcharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/vue-apexcharts/dist/vue-apexcharts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-apexcharts/example/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/vue-apexcharts/example/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-apexcharts/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/vue-apexcharts/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-apexcharts/src/ApexCharts.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/vue-apexcharts/src/ApexCharts.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-apexcharts/typings/vue-apexcharts.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/vue-apexcharts/typings/vue-apexcharts.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-lazyload/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/vue-lazyload/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libs/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/util.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Main.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/report/report/report.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/report/report/report.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/reportdata/address/address.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/reportdata/address/address.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/reportdata/pay/pay.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/reportdata/pay/pay.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/reportdata/real/real.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/reportdata/real/real.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/reportdata/reportAdd/reportAdd.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/reportdata/reportAdd/reportAdd.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/reportdata/reportDevice/reportDevice.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/reportdata/reportDevice/reportDevice.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/reportdata/reportLevel/reportLevel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/reportdata/reportLevel/reportLevel.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/reportdata/reportOnline/reportOnline.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/reportdata/reportOnline/reportOnline.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/reportdata/reportPayBehav/reportPayBehav.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/reportdata/reportPayBehav/reportPayBehav.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/reportdata/reportRetention/reportRetention.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/reportdata/reportRetention/reportRetention.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/reportdata/reportVisit/reportVisit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/reportdata/reportVisit/reportVisit.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/reportdata/reportdata/reportdata.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/reportdata/reportdata/reportdata.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -322,60 +41,30 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/libs/util.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="391" selection-start-line="391" selection-end-line="391" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/report/report/report.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="72" column="17" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
-              <folding>
-                <element signature="n#style#0;n#DatePicker#0;n#Col#0;n#Row#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="e#1414#1600#0" expanded="true" />
-                <element signature="e#2724#13424#0" />
-                <element signature="e#10650#11382#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/views/reportdata/real/real.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="583" column="22" selection-start-line="583" selection-start-column="22" selection-end-line="583" selection-end-column="22" />
+            <state relative-caret-position="574">
+              <caret line="242" column="59" selection-start-line="242" selection-start-column="59" selection-end-line="242" selection-end-column="59" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="e#38#224#0" expanded="true" />
-                <element signature="e#464#1093#0" />
-                <element signature="e#326#1719#0" />
-                <element signature="e#7206#14807#0" />
-                <element signature="e#3957#3989#0" />
-                <element signature="e#3959#3991#0" />
-                <element signature="e#4014#4046#0" />
-                <element signature="e#4070#4102#0" />
-                <element signature="e#8166#9505#0" />
-                <element signature="e#3379#3806#0" />
-                <element signature="e#1892#2806#0" />
+                <element signature="e#325#383#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/jquery/dist/jquery.js">
+        <entry file="file://$PROJECT_DIR$/src/views/reportdata/reportdata/reportdata.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+            <state relative-caret-position="-8792">
+              <caret line="1094" column="17" lean-forward="true" selection-start-line="1094" selection-start-column="17" selection-end-line="1094" selection-end-column="17" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#DatePicker#0;n#div#3;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#li#0;n#div#0;n#Col#5;n#Row#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#1;n#div#0;n#Col#5;n#Row#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -383,23 +72,80 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/reportdata/reportRetention/reportRetention.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8955">
-              <caret line="597" column="29" selection-start-line="597" selection-start-column="16" selection-end-line="597" selection-end-column="29" />
+            <state relative-caret-position="-5264">
+              <caret line="785" column="58" lean-forward="true" selection-start-line="785" selection-start-column="58" selection-end-line="785" selection-end-column="58" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#DatePicker#0;n#div#3;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#5;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#6;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="e#5359#5421#0" expanded="true" />
+                <element signature="e#27098#29026#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+        <entry file="file://$PROJECT_DIR$/src/views/reportdata/pay/pay.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="17174" column="12" selection-start-line="17174" selection-start-column="12" selection-end-line="17174" selection-end-column="12" />
+            <state relative-caret-position="283">
+              <caret line="642" column="14" lean-forward="true" selection-start-line="642" selection-start-column="14" selection-end-line="647" selection-end-column="17" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#DatePicker#0;n#div#3;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Radio#1;n#RadioGroup#0;n#div#4;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/reportdata/reportAdd/reportAdd.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="510" column="59" lean-forward="true" selection-start-line="510" selection-start-column="59" selection-end-line="510" selection-end-column="59" />
+              <folding>
+                <element signature="n#style#0;n#DatePicker#0;n#div#3;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#11732#13895#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/reportdata/reportLevel/reportLevel.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1800">
+              <caret line="204" column="31" selection-start-line="204" selection-start-column="31" selection-end-line="204" selection-end-column="31" />
+              <folding>
+                <element signature="n#style#0;n#DatePicker#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#Form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/views/reportdata/reportOnline/reportOnline.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="393">
+              <caret line="260" column="46" lean-forward="true" selection-start-line="260" selection-start-column="46" selection-end-line="260" selection-end-column="46" />
+              <folding>
+                <element signature="n#style#0;n#DatePicker#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/reportdata/reportPayBehav/reportPayBehav.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4744">
+              <caret line="208" column="29" selection-start-line="208" selection-start-column="29" selection-end-line="208" selection-end-column="29" />
+              <folding>
+                <element signature="n#style#0;n#DatePicker#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -407,39 +153,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/reportdata/reportVisit/reportVisit.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2177">
-              <caret line="28" column="31" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/reportdata/address/address.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="61" />
+            <state relative-caret-position="351">
+              <caret line="171" column="64" selection-start-line="171" selection-start-column="64" selection-end-line="171" selection-end-column="64" />
               <folding>
-                <element signature="e#1024#1151#0" />
-                <element signature="e#1190#1269#0" />
-                <element signature="e#1307#1486#0" />
-                <element signature="e#1527#2252#0" />
-                <element signature="e#2291#2843#0" />
-                <element signature="e#2889#3145#0" />
-                <element signature="e#3183#3746#0" />
+                <element signature="n#style#0;n#DatePicker#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#1436#1475#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main.js">
+        <entry file="file://$PROJECT_DIR$/src/views/reportdata/reportDevice/reportDevice.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="54" selection-start-line="54" selection-end-line="54" />
+            <state relative-caret-position="326">
+              <caret line="65" column="10" lean-forward="true" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#140#161#0" expanded="true" />
-                <element signature="e#498#534#0" expanded="true" />
+                <element signature="n#style#0;n#DatePicker#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -457,36 +187,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$echarts</find>
-      <find>color</find>
-      <find>handelPayCount</find>
-      <find>data</find>
-      <find>defaultData</find>
-      <find>title</find>
-      <find>menuTheme</find>
-      <find>setOpenedList</find>
-      <find>currNav</find>
-      <find>setAdded</find>
-      <find>routers</find>
-      <find>currentPath</find>
-      <find>pageOpenedList</find>
-      <find>pageTagsList</find>
-      <find>cachePage</find>
-      <find>debounce</find>
-      <find>debounceEvent</find>
-      <find>postRequestMini</find>
-      <find>then</find>
-      <find>queryRealReport</find>
-      <find>downloadReport</find>
-      <find>queryRpc</find>
       <find>myEcharts</find>
       <find>reportLine</find>
-      <find>realTimeUtil</find>
       <find>length</find>
       <find>counterEcharts</find>
       <find>surveyOneLine</find>
       <find>$Message</find>
       <find>RSsevenCar</find>
+      <find>navList</find>
+      <find>postRequestMini</find>
+      <find>deleteCreative</find>
+      <find>queryRealReport</find>
+      <find>addAdvert</find>
+      <find>postRequest</find>
+      <find>rules</find>
+      <find>src</find>
+      <find>forEach</find>
+      <find>loginout</find>
+      <find>...-</find>
+      <find>sendMsg</find>
+      <find>G2</find>
+      <find>realTimeUtil</find>
+      <find>timeOverSection</find>
+      <find>payList</find>
+      <find>dauNumOrInstallNumList</find>
+      <find>人数</find>
+      <find>now</find>
+      <find>debugger</find>
+      <find>indexStatu</find>
+      <find>z-</find>
+      <find>timeSectionEvent</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -502,26 +232,29 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$APPLICATION_CONFIG_DIR$/webstorm.vmoptions" />
-        <option value="$PROJECT_DIR$/src/views/reportdata/reportAdd/reportAdd.vue" />
-        <option value="$PROJECT_DIR$/src/views/reportdata/reportRetention/reportRetention.vue" />
-        <option value="$PROJECT_DIR$/src/views/reportdata/pay/pay.vue" />
-        <option value="$PROJECT_DIR$/src/views/reportdata/reportDevice/reportDevice.vue" />
         <option value="$PROJECT_DIR$/src/views/game/template/TitleHead.vue" />
         <option value="$PROJECT_DIR$/src/libs/util.js" />
-        <option value="$PROJECT_DIR$/src/views/reportdata/reportdata/reportdata.vue" />
         <option value="$PROJECT_DIR$/src/main.js" />
-        <option value="$PROJECT_DIR$/src/views/Main.vue" />
-        <option value="$PROJECT_DIR$/src/views/reportdata/reportOnline/reportOnline.vue" />
         <option value="$PROJECT_DIR$/src/api/index.js" />
         <option value="$PROJECT_DIR$/src/views/reportdata/address/address.vue" />
         <option value="$PROJECT_DIR$/src/views/report/report/report.vue" />
+        <option value="$PROJECT_DIR$/src/views/Main.vue" />
         <option value="$PROJECT_DIR$/src/views/reportdata/real/real.vue" />
+        <option value="$PROJECT_DIR$/src/views/reportdata/reportdata/reportdata.vue" />
+        <option value="$PROJECT_DIR$/src/views/reportdata/reportRetention/reportRetention.vue" />
+        <option value="$PROJECT_DIR$/src/views/reportdata/pay/pay.vue" />
+        <option value="$PROJECT_DIR$/src/views/reportdata/reportAdd/reportAdd.vue" />
+        <option value="$PROJECT_DIR$/src/views/reportdata/reportLevel/reportLevel.vue" />
+        <option value="$PROJECT_DIR$/src/views/reportdata/reportPayBehav/reportPayBehav.vue" />
+        <option value="$PROJECT_DIR$/src/views/reportdata/reportVisit/reportVisit.vue" />
+        <option value="$PROJECT_DIR$/src/views/reportdata/reportDevice/reportDevice.vue" />
+        <option value="$PROJECT_DIR$/src/views/reportdata/reportOnline/reportOnline.vue" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1968" />
-    <option name="y" value="129" />
+    <option name="x" value="-1862" />
+    <option name="y" value="83" />
     <option name="width" value="1872" />
     <option name="height" value="998" />
   </component>
@@ -542,11 +275,6 @@
             <path>
               <item name="baobao-admin-front" type="b2602c69:ProjectViewProjectNode" />
               <item name="baobao-admin-front" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="baobao-admin-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="baobao-admin-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -559,13 +287,14 @@
               <item name="baobao-admin-front" type="b2602c69:ProjectViewProjectNode" />
               <item name="baobao-admin-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="baobao-admin-front" type="b2602c69:ProjectViewProjectNode" />
               <item name="baobao-admin-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="baobao-admin-front" type="b2602c69:ProjectViewProjectNode" />
@@ -588,6 +317,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="reportdata" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="baobao-admin-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="baobao-admin-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="reportdata" type="462c0819:PsiDirectoryNode" />
+              <item name="pay" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="baobao-admin-front" type="b2602c69:ProjectViewProjectNode" />
@@ -603,7 +340,23 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="reportdata" type="462c0819:PsiDirectoryNode" />
+              <item name="reportAdd" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="baobao-admin-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="baobao-admin-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="reportdata" type="462c0819:PsiDirectoryNode" />
+              <item name="reportdata" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="baobao-admin-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="baobao-admin-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="reportdata" type="462c0819:PsiDirectoryNode" />
+              <item name="reportDevice" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="baobao-admin-front" type="b2602c69:ProjectViewProjectNode" />
@@ -619,7 +372,31 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="reportdata" type="462c0819:PsiDirectoryNode" />
+              <item name="reportOnline" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="baobao-admin-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="baobao-admin-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="reportdata" type="462c0819:PsiDirectoryNode" />
+              <item name="reportPayBehav" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="baobao-admin-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="baobao-admin-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="reportdata" type="462c0819:PsiDirectoryNode" />
               <item name="reportRetention" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="baobao-admin-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="baobao-admin-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="reportdata" type="462c0819:PsiDirectoryNode" />
+              <item name="reportVisit" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -772,7 +549,17 @@
       <workItem from="1587794864676" duration="696000" />
       <workItem from="1587870620798" duration="1276000" />
       <workItem from="1587881881758" duration="11361000" />
-      <workItem from="1587993721174" duration="26491000" />
+      <workItem from="1587993721174" duration="33974000" />
+      <workItem from="1588858986793" duration="264000" />
+      <workItem from="1588859445415" duration="106000" />
+      <workItem from="1588859990273" duration="402000" />
+      <workItem from="1588860732400" duration="217000" />
+      <workItem from="1588921431449" duration="370000" />
+      <workItem from="1588931503083" duration="83000" />
+      <workItem from="1589183826723" duration="155000" />
+      <workItem from="1589184478407" duration="212000" />
+      <workItem from="1589340389410" duration="26757000" />
+      <workItem from="1590041875311" duration="24233000" />
     </task>
     <task id="LOCAL-00001" summary="zhiaiu_mac_12.11">
       <created>1576032069681</created>
@@ -844,11 +631,18 @@
       <option name="project" value="LOCAL" />
       <updated>1586920799638</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="zhiqiu_20200427">
+      <created>1588082522394</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1588082522394</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141643000" />
+    <option name="totallyTimeSpent" value="201925000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -860,10 +654,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1968" y="129" width="1872" height="998" extended-state="0" />
+    <frame x="-1862" y="83" width="1872" height="998" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1858455" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1858455" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -875,7 +669,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3292978" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3292978" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.33443707" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.28587195" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
@@ -883,6 +677,27 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1858455" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3292978" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3292978" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.17439294" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TypeScript" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -944,7 +759,8 @@
     <MESSAGE value="zhiaiu_mac_2020_04_14" />
     <MESSAGE value="zhiqiu" />
     <MESSAGE value="zhiqiu_20200415" />
-    <option name="LAST_COMMIT_MESSAGE" value="zhiqiu_20200415" />
+    <MESSAGE value="zhiqiu_20200427" />
+    <option name="LAST_COMMIT_MESSAGE" value="zhiqiu_20200427" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -987,161 +803,6 @@
     <state x="2542" y="356" width="670" height="676" key="search.everywhere.popup/0.23.1920.1030/1920.129.1920.1057@1920.129.1920.1057" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/views/sys/user-manage/userManage.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/sys/role-manage/roleManage.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="413" column="12" selection-start-line="413" selection-start-column="12" selection-end-line="413" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/game/notice/notice.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="88" column="37" lean-forward="true" selection-start-line="88" selection-start-column="37" selection-end-line="88" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/locale/lang/en-US.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Login.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/libs/changeWeek.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/favicon.ico">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/libs/hasPermission.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/libs/dictUtil.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/libs/validate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-147" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/vuex/dist/vuex.esm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/vue-router/dist/vue-router.esm.browser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="1572" column="4" selection-start-line="1572" selection-start-column="4" selection-end-line="1572" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/vue/types/options.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="88" column="2" selection-start-line="88" selection-start-column="2" selection-end-line="88" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/vuex/dist/vuex.esm.browser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="289" column="2" selection-start-line="289" selection-start-column="2" selection-end-line="289" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/modules/dict.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/modules/user.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/vue-router/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/vue-router/types/router.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@vue/cli-service/lib/commands/build/resolveAppConfig.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="17" column="48" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/modules/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/libs/lazyLoading.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/router/router.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1163,37 +824,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/reportdata/reportAdd/reportAdd.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/reportdata/pay/pay.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12510">
-          <caret line="836" column="34" selection-start-line="836" selection-start-column="28" selection-end-line="836" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/home/home.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="51" column="52" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/vuex/types/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="46" column="2" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1204,41 +838,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Main.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4440">
-          <caret line="304" column="65" lean-forward="true" selection-start-line="304" selection-start-column="65" selection-end-line="304" selection-end-column="65" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#Avatar#0;n#a#0;n#Dropdown#0;n#Row#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/node_modules/_axios@0.19.0@axios/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
           <caret line="128" column="53" lean-forward="true" selection-start-line="128" selection-start-column="53" selection-end-line="128" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/libs/axios.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-716">
-          <caret line="254" column="13" selection-start-line="254" selection-start-column="13" selection-end-line="254" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="574" column="59" selection-start-line="574" selection-start-column="59" selection-end-line="574" selection-end-column="59" />
-          <folding>
-            <element signature="e#29#441#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1249,27 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/reportdata/reportOnline/reportOnline.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
-          <caret line="278" column="153" selection-start-line="278" selection-start-column="153" selection-end-line="278" selection-end-column="153" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/iview/dist/iview.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1236" column="251" selection-start-line="1236" selection-start-column="251" selection-end-line="1236" selection-end-column="251" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="940" column="4" selection-start-line="940" selection-start-column="4" selection-end-line="940" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/libs/util.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
@@ -1277,32 +859,6 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#140#161#0" expanded="true" />
-            <element signature="e#498#534#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/reportdata/reportVisit/reportVisit.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2177">
-          <caret line="28" column="31" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="17174" column="12" selection-start-line="17174" selection-start-column="12" selection-end-line="17174" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1329,54 +885,337 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/reportdata/reportdata/reportdata.vue">
+    <entry file="file://$PROJECT_DIR$/src/views/sys/user-manage/userManage.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/sys/role-manage/roleManage.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/game/activity/activity.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16495" />
+        <state relative-caret-position="450">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/reportdata/reportRetention/reportRetention.vue">
+    <entry file="file://$PROJECT_DIR$/src/api/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8955">
-          <caret line="597" column="29" selection-start-line="597" selection-start-column="16" selection-end-line="597" selection-end-column="29" />
+        <state relative-caret-position="6720">
+          <caret line="467" column="22" selection-start-line="467" selection-start-column="11" selection-end-line="467" selection-end-column="22" />
+          <folding>
+            <element signature="e#29#441#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/libs/changeWeek.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/libs/dictUtil.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/libs/hasPermission.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/libs/hasRole.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/iview/dist/iview.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="26168" column="4" selection-start-line="26168" selection-start-column="4" selection-end-line="26168" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/web-forms.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="537" column="16" selection-start-line="537" selection-start-column="16" selection-end-line="537" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Login.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="37" lean-forward="true" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+          <folding>
+            <element signature="n#style#0;n#Col#0;n#Row#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/libs/lazyLoading.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/game/advert/advert.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="60" column="40" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/libs/axios.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="77" column="24" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/game/creative/creative.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="60" column="74" selection-start-line="60" selection-start-column="60" selection-end-line="60" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/modules/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="146" column="10" lean-forward="true" selection-start-line="146" selection-start-column="10" selection-end-line="146" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/locale/lang/en-US.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.webworker.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="4197" column="12" selection-start-line="4197" selection-start-column="12" selection-end-line="4197" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mengshen/static/js/app.3f194415.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="66001" selection-start-column="66001" selection-end-column="66001" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="56" column="27" selection-start-line="56" selection-start-column="27" selection-end-line="56" selection-end-column="27" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#140#161#0" expanded="true" />
+            <element signature="e#498#534#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@antv/g2/lib/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/home/home.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1755">
+          <caret line="120" column="14" selection-start-line="120" selection-start-column="14" selection-end-line="120" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/echarts/lib/echarts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5655">
+          <caret line="377" selection-start-line="377" selection-end-line="377" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/vue-i18n/src/components/number.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263445">
+          <caret line="17576" column="17" selection-start-line="17576" selection-start-column="17" selection-end-line="17576" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Main.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2580">
+          <caret line="172" column="52" selection-start-line="172" selection-start-column="52" selection-end-line="172" selection-end-column="52" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#5;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#6;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#5359#5421#0" expanded="true" />
+            <element signature="n#style#0;n#Avatar#0;n#a#0;n#Dropdown#0;n#Row#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#9537#9620#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/vue/types/vue.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="83" column="2" selection-start-line="83" selection-start-column="2" selection-end-line="83" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/report/report/report.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="72" column="17" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
+        <state relative-caret-position="575">
+          <caret line="206" column="22" lean-forward="true" selection-start-line="206" selection-start-column="22" selection-end-line="206" selection-end-column="22" />
           <folding>
             <element signature="n#style#0;n#DatePicker#0;n#Col#0;n#Row#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#1414#1600#0" expanded="true" />
-            <element signature="e#2724#13424#0" />
-            <element signature="e#10650#11382#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="498" column="4" selection-start-line="498" selection-start-column="4" selection-end-line="498" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/reportdata/real/real.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="583" column="22" selection-start-line="583" selection-start-column="22" selection-end-line="583" selection-end-column="22" />
+        <state relative-caret-position="574">
+          <caret line="242" column="59" selection-start-line="242" selection-start-column="59" selection-end-line="242" selection-end-column="59" />
           <folding>
             <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#38#224#0" expanded="true" />
-            <element signature="e#464#1093#0" />
-            <element signature="e#326#1719#0" />
-            <element signature="e#7206#14807#0" />
-            <element signature="e#3957#3989#0" />
-            <element signature="e#3959#3991#0" />
-            <element signature="e#4014#4046#0" />
-            <element signature="e#4070#4102#0" />
-            <element signature="e#8166#9505#0" />
-            <element signature="e#3379#3806#0" />
-            <element signature="e#1892#2806#0" />
+            <element signature="e#325#383#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/reportdata/pay/pay.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="642" column="14" lean-forward="true" selection-start-line="642" selection-start-column="14" selection-end-line="647" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#DatePicker#0;n#div#3;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Radio#1;n#RadioGroup#0;n#div#4;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/reportdata/reportAdd/reportAdd.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="510" column="59" lean-forward="true" selection-start-line="510" selection-start-column="59" selection-end-line="510" selection-end-column="59" />
+          <folding>
+            <element signature="n#style#0;n#DatePicker#0;n#div#3;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#11732#13895#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/reportdata/reportRetention/reportRetention.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5264">
+          <caret line="785" column="58" lean-forward="true" selection-start-line="785" selection-start-column="58" selection-end-line="785" selection-end-column="58" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#DatePicker#0;n#div#3;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#5;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#6;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#5359#5421#0" expanded="true" />
+            <element signature="e#27098#29026#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/reportdata/reportPayBehav/reportPayBehav.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4744">
+          <caret line="208" column="29" selection-start-line="208" selection-start-column="29" selection-end-line="208" selection-end-column="29" />
+          <folding>
+            <element signature="n#style#0;n#DatePicker#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/reportdata/reportLevel/reportLevel.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1800">
+          <caret line="204" column="31" selection-start-line="204" selection-start-column="31" selection-end-line="204" selection-end-column="31" />
+          <folding>
+            <element signature="n#style#0;n#DatePicker#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#Form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/reportdata/reportdata/reportdata.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8792">
+          <caret line="1094" column="17" lean-forward="true" selection-start-line="1094" selection-start-column="17" selection-end-line="1094" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#DatePicker#0;n#div#3;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#li#0;n#div#0;n#Col#5;n#Row#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#div#0;n#Col#5;n#Row#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/reportdata/reportVisit/reportVisit.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="171" column="64" selection-start-line="171" selection-start-column="64" selection-end-line="171" selection-end-column="64" />
+          <folding>
+            <element signature="n#style#0;n#DatePicker#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#1436#1475#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/reportdata/reportDevice/reportDevice.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="65" column="10" lean-forward="true" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#DatePicker#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/reportdata/reportOnline/reportOnline.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="260" column="46" lean-forward="true" selection-start-line="260" selection-start-column="46" selection-end-line="260" selection-end-column="46" />
+          <folding>
+            <element signature="n#style#0;n#DatePicker#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

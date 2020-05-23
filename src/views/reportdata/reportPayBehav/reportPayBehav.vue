@@ -2,11 +2,15 @@
     <div style="background-color:#fff;">
         <!--时间-->
         <div style="margin-bottom: 20px">
-            <RadioGroup v-model="data" type="button" @on-change="init()">>
+            <RadioGroup v-model="data" type="button" @on-change="dayEvent()">>
                 <Radio style="margin: 10px 10px" label="1">昨天</Radio>
                 <Radio style="margin: 10px 10px" label="7">7日</Radio>
                 <Radio style="margin: 10px 10px" label="30">30日</Radio>
             </RadioGroup>
+            <DatePicker v-model="timeSection" :options="options" confirm @on-ok="timeSectionEvent()"
+                        type="daterange" show-week-numbers
+                        placement="bottom-end" placeholder="选择起始日期"
+                        style="margin-left:100px;width: 200px"></DatePicker>
         </div>
         <!--        <div @mouseleave="leave()" style="width: 45px" class="conditionHead">-->
         <!--            <div style="width: 45px;height: 35px;" class="smillPeople"-->
@@ -175,9 +179,36 @@
                 ],
                 pyaGroupChart: {},
                 surveyOneLine: {},
+                timeSection: [],
+                startTime: 0,
+                overTime: 0,
+                options: {
+                    disabledDate(date) {
+                        return date && date.valueOf() >= Date.now() - 86400000;
+                    }
+                },
             }
         },
         methods: {
+            dayEvent() {
+                this.timeSection = [];
+                this.startTime = 0;
+                this.overTime = 0;
+                this.init()
+            },
+            timeSectionEvent() {
+                let nowTime = new Date()
+                this.overTime = 0;
+                this.startTime = 0;
+                if (nowTime - this.timeSection[0] > 0) {
+                    this.startTime = parseInt((nowTime - this.timeSection[0]) / (24 * 60 * 60 * 1000))
+                }
+                if (nowTime - this.timeSection[1] > 0) {
+                    this.overTime = parseInt((nowTime - this.timeSection[1]) / (24 * 60 * 60 * 1000))
+                }
+                this.queryPay()
+            },
+
             enter() {
                 this.isShowCondition = true;
             },
@@ -193,6 +224,13 @@
                     gameid: parseInt(this.getStore('gameid')),
                     date: parseInt(this.data)
                 };
+                if (this.startTime !== 0) {
+                    params.date = this.startTime
+                    this.data = this.startTime
+                }
+                if (this.overTime !== 0) {
+                    params.overTime = this.overTime
+                }
                 queryPaymentBehavior(params).then(e => {
                     this.isLoading = false;
                     if (e.success) {

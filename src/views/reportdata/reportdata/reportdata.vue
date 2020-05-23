@@ -27,15 +27,16 @@
                 </RadioGroup>
             </div>
             <div>
-                <RadioGroup v-model="data" type="button" @on-change="init()">>
+                <RadioGroup v-model="data" type="button" @on-change="dayEvent()">>
                     <Radio style="margin: 10px 10px" label="今天" border></Radio>
                     <Radio style="margin: 10px 10px" label="昨天"></Radio>
                     <Radio style="margin: 10px 10px" label="7日"></Radio>
                     <Radio style="margin: 10px 10px" label="30日"></Radio>
                 </RadioGroup>
-                <!--<Date-picker v-model="timeSection" @on-ok="timeSectionEvent()" type="datetimerange"-->
-                <!--placeholder="选择日期和时间"-->
-                <!--style="width: 300px"></Date-picker>-->
+                <DatePicker v-model="timeSection" :options="options" confirm @on-ok="timeSectionEvent()"
+                            type="daterange" show-week-numbers
+                            placement="bottom-end" placeholder="选择起始日期"
+                            style="margin-left:20px;width: 200px"></DatePicker>
             </div>
         </div>
 
@@ -229,7 +230,7 @@
         <!--        </div>-->
 
         <div style="width:45%;height: 300px" class="reportChartLeft">
-            <div style="position: absolute;top: 0px;left: 5%;z-index: 999">
+            <div style="position: absolute;top: 0px;left: 5%;z-index: 2">
                 <RadioGroup v-model="dauOrInstall" type="button" @on-change="init()">
                     <Radio style="margin: 10px 10px" label="活跃"></Radio>
                     <Radio style="margin: 10px 10px" label="新增"></Radio>
@@ -329,12 +330,11 @@
                 data: '7日',
                 dauOrInstall: '活跃',
                 listData: [],
-                payList: [],
                 retentionDataListTable: [],
                 datas: [],
                 isccc: 99,
                 isPayType: "2",
-                isPayshow:false,
+                isPayshow: false,
                 tips: [
                     "昨日所在周的活跃",
                     "昨日所在周的新增",
@@ -826,6 +826,13 @@
                 map_pieChartI: {},
                 timeBeginSection: '',
                 timeOverSection: '',
+                startTime: 0,
+                overTime: 0,
+                options: {
+                    disabledDate(date) {
+                        return date && date.valueOf() >= Date.now() - 86400000;
+                    }
+                },
             };
         },
         methods: {
@@ -834,6 +841,12 @@
             },
             leave() {
                 this.isShowCondition = false;
+            },
+            dayEvent() {
+                this.timeSection = [];
+                this.startTime = 0;
+                this.overTime = 0;
+                this.init()
             },
             init() {
                 if (initData[this.data] == 0) {
@@ -924,7 +937,7 @@
                 this.surveyOneLine.source(this.datas, {});
                 this.surveyOneLine.scale('value', {
                     min: 0,
-                    alias: '人数',
+                    alias: '-',
                 });
                 this.surveyOneLine.scale('time', {
                     // range: [0, 1]
@@ -1053,26 +1066,23 @@
                 title.key = 'ds';
                 title.width = 150;
                 title.fixed = 'left';
-                // let days = [];
-                // for (let i = 1; i <= 30; i++) {
-                //     let dayObj = new Object();
-                //     dayObj.title = i + '日';
-                //     dayObj.key = [i + 'day'];
-                //     dayObj.width = 150;
-                //     days.push(dayObj);
-                // }
                 tables.push(selection);
                 tables.push(index);
                 tables.push(title);
-                // let finalTable = tables.concat(days);
-                // this.finalTable = finalTable;
             },
             timeUtil(time) {
                 return time.getFullYear() + "-" + ((time.getMonth() + 1) < 10 ? "0" + (time.getMonth() + 1) : (time.getMonth() + 1)) + "-" + (time.getDate() < 10 ? "0" + time.getDate() : time.getDate());
             },
             timeSectionEvent() {
-                this.timeBeginSection = this.timeUtil(this.timeSection[0]);
-                this.timeOverSection = this.timeUtil(this.timeSection[1]);
+                let nowTime = new Date()
+                this.overTime = 0;
+                this.startTime = 0;
+                if (nowTime - this.timeSection[0] > 0) {
+                    this.startTime = parseInt((nowTime - this.timeSection[0]) / (24 * 60 * 60 * 1000))
+                }
+                if (nowTime - this.timeSection[1] > 0) {
+                    this.overTime = parseInt((nowTime - this.timeSection[1]) / (24 * 60 * 60 * 1000))
+                }
                 this.queryDaily()
             },
             queryDaily() {
@@ -1082,8 +1092,13 @@
                     osType: initPhone[this.phone],
                     data: parseInt(initData[this.data]),
                     hxType: parseInt(this.dauOrInstall === '活跃' ? 0 : 1),
-                    timeOverSection: this.timeOverSection,
-                    timeBeginSection: this.timeBeginSection
+                }
+                if (this.startTime !== 0) {
+                    params.data = this.startTime
+                    this.data = this.startTime
+                }
+                if (this.overTime !== 0) {
+                    params.overTime = this.overTime
                 }
                 queryDaily(params).then(e => {
                     if (e.success) {
@@ -1098,7 +1113,7 @@
                         let yesterdayPercentage = [];
                         if (e.yesterdayAndroidIosProportions.length > 0) {
                             yesterdayPercentage = this.androidIosProportions(e.yesterdayAndroidIosProportions);
-                            this.yesTableDataProcess(e.yesterdayShareDaily, yesterdayPercentage, initData[this.data])
+                            this.yesTableDataProcess(e.yesterdayShareDaily, yesterdayPercentage)
                         }
                         //周
                         let weekPercentage = [];
@@ -1113,14 +1128,11 @@
                             this.monthTableDataProcess(e.monthShareDaily, monthPercentage, initData[this.data])
                         }
                         this.listData = this.tableDataProcess(e.shareDailyResultTypes, percentage, initData[this.data]);
-                        if (e.payList.length > 0) {
-                            this.payList = e.payList;
-                        }
                         if (e.shareRetentionList.length > 0) {
                             this.retentionDataListTable = this.saturday(e.shareRetentionList);
                         }
-                        this.datas = this.f2DI(e.dauNumOrInstallNumList, initData[this.data].toString(), this.listData, e.yesterdayShareDaily, parseInt(this.dauOrInstall === '活跃' ? 0 : 1));
-                        this.handelPayCount = this.makeCavas(this.listData, initData[this.data], e.yesterdayShareDaily,this.isPayType);
+                        this.datas = this.f2DI(e.dauNumOrInstallNumList, initData[this.data], this.listData, e.yesterdayShareDaily, parseInt(this.dauOrInstall === '活跃' ? 0 : 1));
+                        this.handelPayCount = this.makeCavas(this.listData, initData[this.data], e.yesterdayShareDaily, this.isPayType);
                         this.chartData = this.makePieChart(e.androidIosProportions);
                         this.surveyOneLine.changeData(this.datas);
                         this.surveyManyLine.changeData(this.handelPayCount);
@@ -1328,7 +1340,7 @@
                     this.weekPercentage = realtimeArrays;
                 }
             },
-            yesTableDataProcess: function (data, info, date) {
+            yesTableDataProcess: function (data, info) {
                 if (data.length > 0) {
                     let activeNum = 0,
                         newIntall = 0,
@@ -1340,16 +1352,6 @@
                         newIntall += item.installNum;
                         payTotal += item.payAmount;
                         payCount += item.payCount;
-
-                        // item.ds = this.weekFunction(item.ds);
-                        // item.payAmount = item.payAmount / this.getStore("currencyRate");
-                        // item.payRate = item.dauNum == 0 ? 0 : (item.payCount * 100 / item.dauNum).toFixed(2);
-                        // item.ARPU = item.dauNum == 0 ? 0 : (item.payAmount / item.dauNum).toFixed(2);
-                        // item.ARPPU = item.payCount == 0 ? 0 : (item.payAmount / item.payCount).toFixed(2);
-                        // item.payInstallAmount = item.payInstallAmount / this.getStore("currencyRate");
-                        // item.payInstallRate = item.installNum == 0 ? 0 : (item.payInstallCount * 100 / item.installNum).toFixed(2);
-                        // item.payInstallARPU = item.installNum == 0 ? 0 : (item.payInstallAmount / item.installNum).toFixed(2);
-                        // item.payInstallARPPU = item.payInstallCount == 0 ? 0 : (item.payInstallAmount / item.payInstallCount).toFixed(2);
                     });
                     if (info.length > 0) {
                         let realtimeArray = [];
@@ -1635,7 +1637,15 @@
             },
             f2DI: function (data, date, listData, shareDailyResultTypess, type) {
                 let datas = [];
+                let mapDef = new Map();
                 if (date == 0) {
+                    for (let i = 0; i < 24; i++) {
+                        let object = new Object();
+                        object.type = '昨日';
+                        object.value = 0;
+                        object.time = i + '时';
+                        mapDef.set(i + '时', object);
+                    }
                     shareDailyResultTypess.forEach(info => {
                         let item = new Object();
                         if (type == 0) {
@@ -1645,8 +1655,14 @@
                         }
                         item.time = info.dayOfHour + '时';
                         item.type = '昨日';
-                        datas.push(item);
+                        mapDef.set(info.dayOfHour + '时', item)
+                        // datas.push(item);
                     });
+                    let defmap = [...mapDef.values()];
+                    for (let index in defmap) {
+                        datas.push(defmap[index]);
+                    }
+
                 }
                 if (date == 0 || date == 1) {
                     listData.sort(this.compare)
@@ -1667,10 +1683,14 @@
                         datas.push(item);
                     });
                 } else {
-                    data.forEach((item, index) => {
+                    listData.forEach((item, index) => {
                         let info = new Object();
-                        info.time = this.getTime(index);
-                        info.value = item;
+                        info.time = item.ds.substr(5, 5);
+                        if (type == 0) {
+                            info.value = item.dauNum;
+                        } else {
+                            info.value = item.installNum;
+                        }
                         if (date == 7) {
                             info.type = '7日'
                         }
@@ -1722,7 +1742,7 @@
                 }
                 return ds;
             },
-            makeCavas: (data, date, yesterdayShareDaily,isPayType) => {
+            makeCavas: (data, date, yesterdayShareDaily, isPayType) => {
                 if (data) {
                     if (date == 0) {
                         data.sort(function (a, b) {
@@ -1732,12 +1752,20 @@
                     let handelPayCount = [];
                     let yeshandelPayCount = [];
                     if (date == 0) {
+                        let yesDef = new Map();
+                        for (let i = 0; i < 24; i++) {
+                            let infopayCount = new Object()
+                            infopayCount.time = (i + '时');
+                            infopayCount.value = 0;
+                            infopayCount.type = '昨天';
+                            yesDef.set(i + '时', infopayCount);
+                        }
                         data.forEach((item, index) => {
                             let infopayCount = new Object();
                             infopayCount.time = item.dayOfHour + '时';
                             if (parseInt(isPayType) == 0) {
                                 infopayCount.value = item.payTimes;
-                            } else if (parseInt(isPayType)  == 1) {
+                            } else if (parseInt(isPayType) == 1) {
                                 infopayCount.value = item.payAmount;
                             } else {
                                 infopayCount.value = item.payCount;
@@ -1750,20 +1778,25 @@
                             infopayCount.time = item.dayOfHour + '时';
                             if (parseInt(isPayType) == 0) {
                                 infopayCount.value = item.payTimes;
-                            } else if (parseInt(isPayType)  == 1) {
+                            } else if (parseInt(isPayType) == 1) {
                                 infopayCount.value = item.payAmount;
                             } else {
                                 infopayCount.value = item.payCount;
                             }
                             infopayCount.type = '昨天';
-                            yeshandelPayCount.push(infopayCount);
+                            yesDef.set(infopayCount.time, infopayCount);
+                            // yeshandelPayCount.push(infopayCount);
                         })
+                        let mapValue = [...yesDef.values()];
+                        for (let i = 0; i < mapValue.length; i++) {
+                            yeshandelPayCount.push(mapValue[i])
+                        }
                         yeshandelPayCount.reverse();
                         handelPayCount = handelPayCount.concat(yeshandelPayCount)
                     } else {
                         data.forEach((item, index) => {
                             let infopayCount = new Object();
-                            if (date != 7 && date != 30) {
+                            if (date == 1) {
                                 infopayCount.time = item.dayOfHour + '时';
                             } else {
                                 infopayCount.time = (item.ds).substr(5, 5);
@@ -1772,7 +1805,7 @@
                             infopayCount.type = '付费人数';
                             handelPayCount.push(infopayCount);
                             let infopayAmount = new Object();
-                            if (date != 7 && date != 30) {
+                            if (date == 1) {
                                 infopayAmount.time = item.dayOfHour + '时';
                             } else {
                                 infopayAmount.time = (item.ds).substr(5, 5);
@@ -1781,7 +1814,7 @@
                             infopayAmount.type = '付费金额';
                             handelPayCount.push(infopayAmount);
                             let infopayTimes = new Object();
-                            if (date != 7 && date != 30) {
+                            if (date == 1) {
                                 infopayTimes.time = item.dayOfHour + '时';
                             } else {
                                 infopayTimes.time = (item.ds).substr(5, 5);

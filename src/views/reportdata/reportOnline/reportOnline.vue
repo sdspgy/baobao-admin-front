@@ -2,11 +2,15 @@
     <div style="background-color:#fff;height: 1000px">
         <!--时间-->
         <div>
-            <RadioGroup v-model="data" type="button" @on-change="init()">
+            <RadioGroup v-model="data" type="button" @on-change="dayEvent()">
                 <Radio style="margin: 10px 10px" label="1">昨天</Radio>
                 <Radio style="margin: 10px 10px" label="7">7日</Radio>
                 <Radio style="margin: 10px 10px" label="30">30日</Radio>
             </RadioGroup>
+            <DatePicker v-model="timeSection" :options="options" confirm @on-ok="timeSectionEvent()"
+                        type="daterange" show-week-numbers
+                        placement="bottom-end" placeholder="选择起始日期"
+                        style="margin-left:100px;width: 200px"></DatePicker>
         </div>
         <Row style="margin-top: 20px">
             <Table :loading="loadingOnline" height="435" highlight-row @on-row-click="clickOnlineTable" border
@@ -209,23 +213,55 @@
                 tableV: [],
                 charts: [],
                 pyaGroupChart: {},
-                shareDailyResultTypes: []
+                shareDailyResultTypes: [],
+                timeSection: [],
+                startTime: 0,
+                overTime: 0,
+                options: {
+                    disabledDate(date) {
+                        return date && date.valueOf() >= Date.now() - 86400000;
+                    }
+                },
             }
         },
         methods: {
+            dayEvent() {
+                this.timeSection = [];
+                this.startTime = 0;
+                this.overTime = 0;
+                this.init()
+            },
+            timeSectionEvent() {
+                let nowTime = new Date()
+                this.overTime = 0;
+                this.startTime = 0;
+                if (nowTime - this.timeSection[0] > 0) {
+                    this.startTime = parseInt((nowTime - this.timeSection[0]) / (24 * 60 * 60 * 1000))
+                }
+                if (nowTime - this.timeSection[1] > 0) {
+                    this.overTime = parseInt((nowTime - this.timeSection[1]) / (24 * 60 * 60 * 1000))
+                }
+                this.init()
+            },
             init() {
                 this.loadingOnline = true;
                 this.queryOnline();
 
             },
             queryOnline() {
-
                 let paramss = {
                     gameid: parseInt(this.getStore('gameid')),
                     deviceType: 0,
                     osType: 0,
                     data: parseInt(this.data),
                     hxType: 0,
+                }
+                if (this.startTime !== 0) {
+                    paramss.data = this.startTime
+                    this.data = this.startTime
+                }
+                if (this.overTime !== 0) {
+                    paramss.overTime = this.overTime
                 }
                 queryDaily(paramss).then(e => {
                     this.loadingOnline = false;

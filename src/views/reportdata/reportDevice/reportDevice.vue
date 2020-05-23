@@ -6,11 +6,15 @@
 		</RadioGroup>
 		<!--时间-->
 		<div>
-			<RadioGroup  style="margin-left: 10px" v-model="data" type="button" @on-change="init()">
+			<RadioGroup  style="margin-left: 10px" v-model="data" type="button" @on-change="dayEvent()">
 				<Radio style="margin: 10px 10px" label="1">昨天</Radio>
 				<Radio style="margin: 10px 10px" label="7">7日</Radio>
 				<Radio style="margin: 10px 10px" label="30">30日</Radio>
 			</RadioGroup>
+			<DatePicker v-model="timeSection" :options="options" confirm @on-ok="timeSectionEvent()"
+						type="daterange" show-week-numbers
+						placement="bottom-end" placeholder="选择起始日期"
+						style="margin-left:100px;width: 200px"></DatePicker>
 		</div>
 		<div class="deviceG2"><div id="deviceG2"></div></div>
 	</div>
@@ -27,10 +31,36 @@ export default {
 			type: '0',
 			chartDevice: [],
 			G2Device: {},
-			data: "7"
+			data: "7",
+			timeSection: [],
+			startTime: 0,
+			overTime: 0,
+			options: {
+				disabledDate(date) {
+					return date && date.valueOf() >= Date.now() - 86400000;
+				}
+			},
 		};
 	},
 	methods: {
+		dayEvent() {
+			this.timeSection = [];
+			this.startTime = 0;
+			this.overTime = 0;
+			this.init()
+		},
+		timeSectionEvent() {
+			let nowTime = new Date()
+			this.overTime = 0;
+			this.startTime = 0;
+			if (nowTime - this.timeSection[0] > 0) {
+				this.startTime = parseInt((nowTime - this.timeSection[0]) / (24 * 60 * 60 * 1000))
+			}
+			if (nowTime - this.timeSection[1] > 0) {
+				this.overTime = parseInt((nowTime - this.timeSection[1]) / (24 * 60 * 60 * 1000))
+			}
+			this.init()
+		},
 		init() {
 			this.queryDevices();
 		},
@@ -40,6 +70,13 @@ export default {
 				type: parseInt(this.type),
 				data: parseInt(this.data)
 			};
+			if (this.startTime !== 0) {
+				params.data = this.startTime
+				this.data = this.startTime
+			}
+			if (this.overTime !== 0) {
+				params.overTime = this.overTime
+			}
 			queryDevice(params).then(e => {
 				if (e.success) {
 					let devices = e.deviceDis;

@@ -22,34 +22,174 @@
                 carOption: {},
 
                 counterChart: {},
-                counterRealDate: ["-"],
-                counterRealData: [0],
+                counterRealDate: [],
+                counterRealData: [],
 
                 dauChart: {},
-                dauRealDate: ["-"],
-                dauRealData: [0],
+                dauRealDate: [],
+                dauRealData: [],
 
                 installChart: {},
-                installRealDate: ["-"],
-                installRealData: [0],
+                installRealDate: [],
+                installRealData: [],
 
                 gameinfoChart: {},
-                gameinfoRealDate: ["-"],
-                gameinfoRealData: [0],
+                gameinfoRealDate: [],
+                gameinfoRealData: [],
 
                 economyChart: {},
-                economyRealDate: ["-"],
-                economyRealData: [0]
+                economyRealDate: [],
+                economyRealData: [],
+
+                realTime: {}
             }
+        },
+        destroyed() {
+            //清除定时器
+            clearInterval(this.realTime);
+            console.log("清除定时器");
         },
         methods: {
             init() {
-                setInterval(() => {
+                this.defaultChart();
+                this.realTime = setInterval(() => {
                     this.queryReal()
                 }, 5000);
             },
+            addDefChart() {
+                this.counterChart.setOption({
+                    xAxis: {
+                        data: this.counterRealDate
+                    },
+                    series: [{
+                        name: 'counter',
+                        data: this.counterRealData
+                    }]
+                });
+                this.dauChart.setOption({
+                    xAxis: {
+                        data: this.dauRealDate
+                    },
+                    series: [{
+                        name: '活跃',
+                        data: this.dauRealData
+                    }]
+                });
+                this.installChart.setOption({
+                    xAxis: {
+                        data: this.installRealDate
+                    },
+                    series: [{
+                        name: '安装',
+                        data: this.installRealData
+                    }]
+                });
+                this.gameinfoChart.setOption({
+                    xAxis: {
+                        data: this.gameinfoRealDate
+                    },
+                    series: [{
+                        name: 'gameinfo',
+                        data: this.gameinfoRealData
+                    }]
+                });
+                this.economyChart.setOption({
+                    xAxis: {
+                        data: this.economyRealDate
+                    },
+                    series: [{
+                        name: 'economy',
+                        data: this.economyRealData
+                    }]
+                });
+            },
+            defaultChart() {
+                for (let i = 50; i > 0; i--) {
+                    let timeSection = this.realTimeUtil(new Date, i)
+                    let params = {
+                        timeSection: timeSection,
+                        gameid: (this.getStore('gameid')).toString()
+                    }
+                    if (this.counterRealDate.length > 50) {
+                        this.counterRealDate.shift()
+                    }
+                    this.counterRealDate.push(timeSection.substring(11, 19));
+                    if (this.dauRealDate.length > 50) {
+                        this.dauRealDate.shift()
+                    }
+                    this.dauRealDate.push(timeSection.substring(11, 19))
+
+                    if (this.installRealDate.length > 50) {
+                        this.installRealDate.shift()
+                    }
+                    this.installRealDate.push(timeSection.substring(11, 19))
+
+                    if (this.gameinfoRealDate.length > 50) {
+                        this.gameinfoRealDate.shift()
+                    }
+                    this.gameinfoRealDate.push(timeSection.substring(11, 19))
+
+                    if (this.economyRealDate.length > 50) {
+                        this.economyRealDate.shift()
+                    }
+                    this.economyRealDate.push(timeSection.substring(11, 19))
+                    queryRealReport(params).then(res => {
+                        if (res.success) {
+                            if (this.counterRealData.length > 50) {
+                                this.counterRealData.shift()
+                            }
+                            if (res.metricNumCOUNTER) {
+                                this.counterRealData.push(res.metricNumCOUNTER)
+                            } else {
+                                this.counterRealData.push(0)
+                            }
+
+                            if (this.dauRealData.length > 50) {
+                                this.dauRealData.shift()
+                            }
+                            if (res.metricNumDAU) {
+                                this.dauRealData.push(res.metricNumDAU)
+                            } else {
+                                this.dauRealData.push(0)
+                            }
+
+
+                            if (this.installRealData.length > 50) {
+                                this.installRealData.shift()
+                            }
+                            if (res.metricNumINSTALL) {
+                                this.installRealData.push(res.metricNumINSTALL)
+                            } else {
+                                this.installRealData.push(0)
+                            }
+
+
+                            if (this.gameinfoRealData.length > 50) {
+                                this.gameinfoRealData.shift()
+                            }
+                            if (res.metricNumGAMEINFO) {
+                                this.gameinfoRealData.push(res.metricNumGAMEINFO)
+                            } else {
+                                this.gameinfoRealData.push(0)
+                            }
+
+
+                            if (this.economyRealData.length > 50) {
+                                this.economyRealData.shift()
+                            }
+                            if (res.metricNumECONOMY) {
+                                this.economyRealData.push(res.metricNumECONOMY)
+                            } else {
+                                this.economyRealData.push(0)
+                            }
+                            this.addDefChart();
+                        }
+                    })
+                }
+            },
+
             queryReal() {
-                let timeSection = this.realTimeUtil(new Date)
+                let timeSection = this.realTimeUtil(new Date, 1)
                 let params = {
                     timeSection: timeSection,
                     gameid: (this.getStore('gameid')).toString()
@@ -639,11 +779,11 @@
                 }
                 this.economyChart.setOption(option);
             },
-            realTimeUtil(time) {
-                //前5秒的时间
-                let dt1 = new Date(time.getTime() - (time.getSeconds() % 5) * 1000);
+            realTimeUtil(time, i) {
+                //前i*5秒的时间
+                let dt1 = new Date(time.getTime() - ((time.getSeconds() % 5) + i * 5) * 1000);
                 let format1 = (this.dateFormat("YYYY-mm-dd HH:MM:SS", dt1))
-                let dt2 = new Date(time.getTime() - (time.getSeconds() % 5) * 1000 - 5000);
+                let dt2 = new Date(time.getTime() - ((time.getSeconds() % 5) + (i + 1) * 5) * 1000);
                 let format2 = (this.dateFormat("YYYY-mm-dd HH:MM:SS", dt2))
 
                 return format2 + '_' + format1;
