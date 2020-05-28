@@ -287,7 +287,6 @@ export const postRequestMiniNoTF = (url, params) => {
         url: `${basePathMinipro}${url}`,
         data: params,
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
             'token': '413e3c4a-4d19-45ec-9304-caea6c0e6e25'
         }
     });

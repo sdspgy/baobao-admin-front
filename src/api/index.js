@@ -575,6 +575,53 @@ export const queryRealReport = (params) => {
     return postRequestMini('/report/api/realReport', params)
 }
 
+/-------模版参数接口-----------/
+export const queryAllParams = (params) => {
+    return getRequestMinipro('/report/api/params/queryAllParams', params)
+}
+export const addParam = (params) => {
+    return postRequestMini('/report/api/params/addParam', params)
+}
+export const updateParam = (params) => {
+    return postRequestMini('/report/api/params/updateParam', params)
+}
+export const deleteParam = (params) => {
+    return postRequestMini('/report/api/params/deleteParam', params)
+}
+export const queryParamsByIds = (params) => {
+    return postRequestMini('/report/api/params/queryParamsByIds', params)
+}
+
+/-------模版接口-----------/
+export const queryAllTemplate = (params) => {
+    return getRequestMinipro('/report/api/template/queryAllTemplate', params)
+}
+export const queryAllTemplateGroup = (params) => {
+    return getRequestMinipro('/report/api/template/queryAllTemplateGroup', params)
+}
+export const insertTemplate = (params) => {
+    return postRequestMini('/report/api/template/insertTemplate', params)
+}
+export const updateTemplate = (params) => {
+    return postRequestMini('/report/api/template/updateTemplate', params)
+}
+export const deleteTemplate = (params) => {
+    return postRequestMini('/report/api/template/deleteTemplate', params)
+}
+
+/-------任务接口-----------/
+export const queryAllTask = (params) => {
+    return getRequestMinipro('/report/api/task/queryAllTask', params)
+}
+export const queryTemplateResult = (params) => {
+    return postRequestMini('/report/api/task/queryTaskResult', params)
+}
+export const insertTask = (params) => {
+    return postRequestMini('/report/api/task/insertTask', params)
+}
+export const deleteTask = (params) => {
+    return postRequestMini('/report/api/task/deleteTask', params)
+}
 /**
  * 日报下载---------------------------------------------------------------------
  */
