@@ -622,6 +622,10 @@ export const insertTask = (params) => {
 export const deleteTask = (params) => {
     return postRequestMini('/report/api/task/deleteTask', params)
 }
+
+export const customReport = (params) => {
+    return postRequestMini('/report/api/customReport', params)
+}
 /**
  * 日报下载---------------------------------------------------------------------
  */

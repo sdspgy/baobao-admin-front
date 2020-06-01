@@ -47,6 +47,11 @@
                 <Button type="primary" :loading="submitLoading" @click="insertTask">创建任务</Button>
             </div>
         </Modal>
+
+        <Row style="margin-top: 50px;margin-bottom: 50px;">
+            <Table :loading="loading" height="500" border :columns="columnsResult" :data="taskResult" sortable="custom"
+                   ref="table"></Table>
+        </Row>
     </div>
 </template>
 
@@ -57,7 +62,8 @@
         insertTask,
         deleteTask,
         queryParamsByIds,
-        queryAllTemplateGroup
+        queryAllTemplateGroup,
+        customReport
     } from '@/api/index';
 
     export default {
@@ -116,6 +122,15 @@
                                     },
                                 }, '错误')
                             }
+                            if (params.row.state == 3) {
+                                return h('span', {
+                                        style: {
+                                            color: '#6495ED'
+                                        },
+                                    },
+                                    '待执行'
+                                )
+                            }
                         }
                     },
                     {
@@ -134,6 +149,23 @@
                         width: 200,
                         align: 'center',
                         render: (h, params) => {
+                            let execute = h(
+                                'Button',
+                                {
+                                    props: {
+                                        type: 'primary',
+                                        size: 'small',
+                                        disabled: !this.$route.meta.permTypes.includes('search')
+                                    },
+                                    style: {marginRight: '5px'},
+                                    on: {
+                                        click: () => {
+                                            this.execute(params.row);
+                                        }
+                                    }
+                                },
+                                '执行'
+                            );
                             let queryResult = h(
                                 'Button',
                                 {
@@ -167,7 +199,9 @@
                                 },
                                 '删除'
                             );
-                            return h('div', [queryResult, deleteButton]);
+                            return h('div', [execute, queryResult, deleteButton
+                            ])
+                                ;
                         }
                     }
                 ],
@@ -182,7 +216,9 @@
                 timeParams: [],
                 taskForm: {
                     describes: '',
-                }
+                },
+                columnsResult: [],
+                taskResult: []
             }
         },
         mounted() {
@@ -276,11 +312,51 @@
                 })
 
             },
-            queryResult(v) {
+            execute(v) {
+                let params = {
+                    taskId: v.taskId,
+                    sql: v.taskSql
+                }
+                customReport(params).then(res => {
+                    if (res.msg) {
+                        this.$Message.info('正在运行');
+                    } else if (res.result) {
 
+                    } else {
+                        this.$Message.info('内部错误');
+                    }
+                })
+            },
+            queryResult(v) {
+                this.columnsResult = [];
+                this.taskResult = [];
+                let params = {
+                    taskId: v.taskId,
+                    sql: v.taskSql
+                }
+                customReport(params).then(res => {
+                    if (res.msg) {
+                        this.$Message.info('正在运行');
+                    } else if (res.result) {
+                        let result = res.result;
+                        this.taskResult = result;
+                        console.log(result)
+                        let columnsResult = [];
+                        let resultHead = result[0];
+                        for (let item in resultHead) {
+                            let objectItem = new Object();
+                            objectItem.title = item;
+                            objectItem.key = item;
+                            objectItem.width = 80;
+                            columnsResult.push(objectItem);
+                        }
+                        this.columnsResult = columnsResult;
+                    } else {
+                        this.$Message.info('内部错误');
+                    }
+                })
             },
             remove(v) {
-                debugger
                 let id = v.taskId;
                 let params = {
                     id: id
