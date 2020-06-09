@@ -9,14 +9,14 @@
                    ref="table"></Table>
         </Row>
 
-        <Modal title="操作参数" v-model="paramsModalVisible" :mask-closable="false" :width="600">
+        <Modal title="操作参数" v-model="paramsModalVisible" :mask-closable="false" :width="500">
             <Form ref="paramsForm" :model="paramsForm" :label-width="80" :rules="paramsFormValidate">
 
                 <FormItem label="参数名" prop="paramName"
                           :rules="{required: true, message: 'can not be empty', trigger: 'blur'}"
                           :error="errorparamName"><Input
                         v-model="paramsForm.paramName"/></FormItem>
-                <FormItem label="参数英文名" prop="paramEnName"
+                <FormItem label="参数英文" prop="paramEnName"
                           :rules="{required: true, message: 'can not be empty', trigger: 'blur'}"
                           :error="errorparamEnName"><Input
                         v-model="paramsForm.paramEnName"/></FormItem>

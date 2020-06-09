@@ -13,19 +13,13 @@
                 <Radio v-for="(item,index) in templateListGroup" :key="index" :label="item[0].types"></Radio>
             </RadioGroup>
             <Divider/>
-            <RadioGroup v-model="template">
+            <RadioGroup v-model="template" @on-change="openInsertTask">
                 <Radio v-for="(item,index) in likeTypeTemplate" :key="index"
                        :label="item">{{item.describes}}
                 </Radio>
             </RadioGroup>
-            <div slot="footer">
-                <Button type="text" @click="cancelSelectTemplate">取消</Button>
-                <Button type="primary" :loading="submitLoading" @click="openInsertTask">打开模版</Button>
-            </div>
-        </Modal>
-
-        <Modal title="创建任务" v-model="insertTaskModalVisible" :mask-closable="false" :width="500">
-            <Form ref="taskForm" :model="taskForm" :label-width="80" :rules="taskFormValidate">
+            <Divider/>
+            <Form v-if="taskFormShow" ref="taskForm" :model="taskForm" :label-width="80" :rules="taskFormValidate">
                 <FormItem label="任务名" prop="describes"
                           :rules="{required: true, message: 'can not be empty', trigger: 'blur'}"
                           :error="errordescribes"><Input
@@ -42,6 +36,15 @@
                 </FormItem>
 
             </Form>
+
+            <div slot="footer">
+                <Button type="text" @click="cancelSelectTemplate">取消</Button>
+                <Button type="primary" :loading="submitLoading" @click="insertTask">创建任务</Button>
+            </div>
+        </Modal>
+
+        <Modal title="创建任务" v-model="insertTaskModalVisible" :mask-closable="false" :width="500">
+
             <div slot="footer">
                 <Button type="text" @click="cancelTask">取消</Button>
                 <Button type="primary" :loading="submitLoading" @click="insertTask">创建任务</Button>
@@ -49,8 +52,13 @@
         </Modal>
 
         <Row style="margin-top: 50px;margin-bottom: 50px;">
+            <Button v-if="taskResult.length > 0 ? true :false" type="primary" size="large" @click="exportData">
+                <Icon type="ios-download-outline"></Icon>
+                导出
+            </Button>
+            <br>
             <Table :loading="loading" height="500" border :columns="columnsResult" :data="taskResult" sortable="custom"
-                   ref="table"></Table>
+                   ref="tables"></Table>
         </Row>
     </div>
 </template>
@@ -92,7 +100,20 @@
                     {
                         title: '任务sql',
                         key: 'taskSql',
-                        width: 150
+                        render: (h, params) => {
+                            return h('span', {
+                                    style:
+                                        {
+                                            diaplay: 'inline - block',
+                                            width: '100 %',
+                                            overflow: 'hidde',
+                                            textOverflow: ' ellipsis',
+                                            whiteSpace: 'nowrap'
+                                        }
+                                },
+                                params.row.taskSql
+                            )
+                        }
                     },
                     {
                         title: '状态',
@@ -136,6 +157,11 @@
                     {
                         title: '创建时间',
                         key: 'createTime',
+                        width: 150
+                    },
+                    {
+                        title: '开始执行时间',
+                        key: 'startTime',
                         width: 150
                     },
                     {
@@ -218,7 +244,9 @@
                     describes: '',
                 },
                 columnsResult: [],
-                taskResult: []
+                taskResult: [],
+                taskFormShow: false,
+                downloadCvsName: ''
             }
         },
         mounted() {
@@ -245,29 +273,30 @@
             },
             typeEvent() {
                 this.likeTypeTemplate = this.templateListGroup[this.types];
+                this.taskForm.describes = '';
+                this.timeParams = [];
+                this.textParams = [];
+                this.template = {}
             },
             selectTemplate() {
                 this.types = '';
                 this.template = {};
                 this.likeTypeTemplate = [];
+
+                this.taskForm.describes = '';
+                this.timeParams = [];
+                this.textParams = [];
+                this.taskFormShow = false;
                 this.selectTaskModalVisible = true
             },
             cancelSelectTemplate() {
                 this.selectTaskModalVisible = false
             },
             openInsertTask() {
-                if (!this.types) {
-                    this.$Message.info('请选择类型');
-                    return
-                }
-                if (JSON.stringify(this.template) == '{}') {
-                    this.$Message.info('请选择模版');
-                    return
-                }
-                this.selectTaskModalVisible = false;
                 this.taskForm.describes = '';
                 this.timeParams = [];
                 this.textParams = [];
+
                 let params = {
                     ids: this.template.params.split(',')
                 };
@@ -282,17 +311,25 @@
                                 if (params[item].type === 0) {
                                     this.textParams.push(params[item])
                                 }
+                                this.taskFormShow = true
                             }
                         }
                     }
                 })
-                this.insertTaskModalVisible = true;
             },
             cancelTask() {
                 this.insertTaskModalVisible = false;
             },
             insertTask() {
-                this.insertTaskModalVisible = false;
+                if (!this.types) {
+                    this.$Message.info('请选择类型');
+                    return
+                }
+                if (JSON.stringify(this.template) == '{}') {
+                    this.$Message.info('请选择模版');
+                    return
+                }
+                // this.selectTaskModalVisible = false;
                 let param = '';
                 for (let item in this.textParams) {
                     param += this.textParams[item].paramEnName + ',' + this.textParams[item].value + ';'
@@ -300,17 +337,18 @@
                 for (let item in this.timeParams) {
                     param += this.timeParams[item].paramEnName + ',' + this.dateFormat(this.timeParams[item].value) + ';'
                 }
-                let params = {
+                let paramInsertTask = {
                     describes: this.taskForm.describes,
                     templateId: this.template.templateId,
+                    content:this.template.content,
                     param: param,
                 }
-                insertTask(params).then(res => {
+                insertTask(paramInsertTask).then(res => {
                     if (res.success) {
                         this.queryAllTask()
                     }
                 })
-
+                this.selectTaskModalVisible = false
             },
             execute(v) {
                 let params = {
@@ -330,6 +368,20 @@
             queryResult(v) {
                 this.columnsResult = [];
                 this.taskResult = [];
+                this.downloadCvsName = v.describes;
+                let headTitle = v.content;
+                let items = headTitle.split(';');
+                items.pop();
+                let columnsResults = [];
+                for(let i in items){
+                    let strings = items[i].split(',');
+                    let objectItem = new Object();
+                    objectItem.title = strings[1];
+                    objectItem.key = strings[0];
+                    objectItem.width = 120;
+                    columnsResults.push(objectItem);
+                }
+                this.columnsResult = columnsResults;
                 let params = {
                     taskId: v.taskId,
                     sql: v.taskSql
@@ -340,17 +392,6 @@
                     } else if (res.result) {
                         let result = res.result;
                         this.taskResult = result;
-                        console.log(result)
-                        let columnsResult = [];
-                        let resultHead = result[0];
-                        for (let item in resultHead) {
-                            let objectItem = new Object();
-                            objectItem.title = item;
-                            objectItem.key = item;
-                            objectItem.width = 80;
-                            columnsResult.push(objectItem);
-                        }
-                        this.columnsResult = columnsResult;
                     } else {
                         this.$Message.info('内部错误');
                     }
@@ -366,6 +407,11 @@
                         this.queryAllTask()
                     }
                 })
+            },
+            exportData() {
+                this.$refs.tables.exportCsv({
+                    filename: this.downloadCvsName
+                });
             },
             dateFormat(date) {
                 let fmt = "YYYY-mm-dd";

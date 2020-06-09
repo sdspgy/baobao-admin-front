@@ -8,7 +8,7 @@
                    ref="table"></Table>
         </Row>
 
-        <Modal title="操作模版" v-model="masterplateModalVisible" :mask-closable="false" :width="500">
+        <Modal title="操作模版" v-model="masterplateModalVisible" :mask-closable="false" :width="800">
             <Form ref="masterplateForm" :model="masterplateForm" :label-width="80" :rules="masterplateFormValidate">
 
                 <FormItem label="模版名" prop="describes"
@@ -17,8 +17,8 @@
                         v-model="masterplateForm.describes"/></FormItem>
                 <FormItem label="模版sql" prop="templateSql"
                           :rules="{required: true, message: 'can not be empty', trigger: 'blur'}"
-                          :error="errortemplateSql"><Input
-                        v-model="masterplateForm.templateSql"/></FormItem>
+                          :error="errortemplateSql"><Input type="textarea" :autosize="{minRows: 2,maxRows: 5}"
+                                                           v-model="masterplateForm.templateSql"/></FormItem>
                 <FormItem label="模版类型" prop="types"
                           :rules="{required: true, message: 'can not be empty', trigger: 'blur'}">
                     <Input
@@ -99,7 +99,20 @@
                     {
                         title: '模版sql',
                         key: 'templateSql',
-                        width: 250
+                        render: (h, params) => {
+                            return h('span', {
+                                    style:
+                                        {
+                                            diaplay: 'inline - block',
+                                            width: '100 %',
+                                            overflow: 'hidde',
+                                            textOverflow: ' ellipsis',
+                                            whiteSpace: 'nowrap'
+                                        }
+                                },
+                                params.row.templateSql
+                            )
+                        }
                     }, {
                         title: '创建时间',
                         key: 'createTime',
@@ -272,7 +285,7 @@
                 let contents = params.items;
                 let content = '';
                 for (let item in contents) {
-                    content += contents[item].value + ',' + contents[item].eNvalue + ';'
+                    content += contents[item].value.replace(/\s+/g, "") + ',' + contents[item].eNvalue.replace(/\s+/g, "") + ';'
                 }
                 params.content = content;
                 params.params = params.params.toString();
