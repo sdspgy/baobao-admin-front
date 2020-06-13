@@ -7,6 +7,7 @@
             <Table :loading="loading" border :columns="columns" :data="taskList" sortable="custom"
                    ref="table"></Table>
         </Row>
+        <Page @on-change="pageEvent()" :total="pageTotal" :current.sync="pages" show-total/>
 
         <Modal title="选择模版" v-model="selectTaskModalVisible" :mask-closable="false" :width="500">
             <RadioGroup v-model="types" @on-change="typeEvent">
@@ -24,6 +25,9 @@
                           :rules="{required: true, message: 'can not be empty', trigger: 'blur'}"
                           :error="errordescribes"><Input
                         v-model="taskForm.describes"/></FormItem>
+                <FormItem label="游戏ID" prop="gameid"><Input
+                        v-model="gameid"/>
+                </FormItem>
                 <FormItem v-for="(item,index) in textParams" :key="index" :label="item.paramName" prop="value"><Input
                         v-model="textParams[index].value"/></FormItem>
 
@@ -81,12 +85,12 @@
             return {
                 taskList: [],
                 columns: [
-                    {
-                        type: 'index',
-                        width: 60,
-                        align: 'center',
-                        fixed: 'left'
-                    },
+                    // {
+                    //     type: 'index',
+                    //     width: 60,
+                    //     align: 'center',
+                    //     fixed: 'left'
+                    // },
                     {
                         title: '任务ID',
                         key: 'taskId',
@@ -246,7 +250,13 @@
                 columnsResult: [],
                 taskResult: [],
                 taskFormShow: false,
-                downloadCvsName: ''
+                downloadCvsName: '',
+                gameid: '',
+                gamename: '',
+                xlsxTitle: [],
+                titleMap: Map,
+                pages: 1,
+                pageTotal: 100
             }
         },
         mounted() {
@@ -256,6 +266,8 @@
             init() {
                 this.queryAllTemplateGroup();
                 this.queryAllTask();
+                this.gameid = this.getStore('gameid');
+                this.gamename = this.getStore('gamename');
             },
             queryAllTemplateGroup() {
                 queryAllTemplateGroup().then(res => {
@@ -265,9 +277,13 @@
                 })
             },
             queryAllTask() {
-                queryAllTask().then(res => {
+                let params = {
+                    pages: this.pages
+                }
+                queryAllTask(params).then(res => {
                     if (res.success) {
-                        this.taskList = res.taskList
+                        this.taskList = res.taskList;
+                        this.pageTotal = res.pageSum;
                     }
                 })
             },
@@ -277,6 +293,10 @@
                 this.timeParams = [];
                 this.textParams = [];
                 this.template = {}
+            },
+            pageEvent() {
+                debugger
+                this.queryAllTask()
             },
             selectTemplate() {
                 this.types = '';
@@ -293,7 +313,7 @@
                 this.selectTaskModalVisible = false
             },
             openInsertTask() {
-                this.taskForm.describes = '';
+                this.taskForm.describes = this.template.describes;
                 this.timeParams = [];
                 this.textParams = [];
 
@@ -331,16 +351,25 @@
                 }
                 // this.selectTaskModalVisible = false;
                 let param = '';
+                let time = '';
                 for (let item in this.textParams) {
                     param += this.textParams[item].paramEnName + ',' + this.textParams[item].value + ';'
                 }
                 for (let item in this.timeParams) {
                     param += this.timeParams[item].paramEnName + ',' + this.dateFormat(this.timeParams[item].value) + ';'
+                    debugger
+                    if (this.timeParams[item].paramEnName === 'ds') {
+                        time = this.dateFormat(this.timeParams[item].value)
+                    } else {
+                        time = this.dateFormat(new Time())
+                    }
                 }
+                param += 'gameid' + ',' + this.gameid + ';'
+                let gamename = this.getStore("gamename")
                 let paramInsertTask = {
-                    describes: this.taskForm.describes,
+                    describes: time + '-' + gamename + '-' + this.taskForm.describes,
                     templateId: this.template.templateId,
-                    content:this.template.content,
+                    content: this.template.content,
                     param: param,
                 }
                 insertTask(paramInsertTask).then(res => {
@@ -372,16 +401,22 @@
                 let headTitle = v.content;
                 let items = headTitle.split(';');
                 items.pop();
-                let columnsResults = [];
-                for(let i in items){
+                let columnsResults = [],
+                    xlsxTitle = [];
+                let titleMap = new Map();
+                for (let i in items) {
                     let strings = items[i].split(',');
                     let objectItem = new Object();
                     objectItem.title = strings[1];
                     objectItem.key = strings[0];
                     objectItem.width = 120;
                     columnsResults.push(objectItem);
+                    xlsxTitle.push(strings[0]);
+                    titleMap.set(strings[0], strings[1]);
                 }
                 this.columnsResult = columnsResults;
+                this.xlsxTitle = xlsxTitle;
+                this.titleMap = titleMap;
                 let params = {
                     taskId: v.taskId,
                     sql: v.taskSql
@@ -409,9 +444,107 @@
                 })
             },
             exportData() {
-                this.$refs.tables.exportCsv({
-                    filename: this.downloadCvsName
-                });
+                //导出CVS
+                // this.$refs.tables.exportCsv({
+                //     filename: this.downloadCvsName
+                // });
+                var title = []
+                Object.keys(this.taskResult [0]).forEach(function (key) {
+                    title.push(key)
+                })
+                let titleEn = [];
+                for (let i in title) {
+                    titleEn.push(this.titleMap.get(title[i]));
+                }
+                this.JSONToExcelConvertor(this.taskResult, this.downloadCvsName, titleEn)
+            },
+            JSONToExcelConvertor(JSONData, FileName, title, filter) {
+                if (!JSONData)
+                    return;
+                //转化json为object
+                var arrData = typeof JSONData != 'object' ? JSON.parse(JSONData) : JSONData;
+
+                var excel = "<table>";
+
+                //设置表头
+                var row = "<tr>";
+
+                if (title) {
+                    //使用标题项
+                    for (var i in title) {
+                        row += "<th align='center'>" + title[i] + '</th>';
+                    }
+
+                } else {
+                    //不使用标题项
+                    for (var i in arrData[0]) {
+                        row += "<th align='center'>" + i + '</th>';
+                    }
+                }
+
+                excel += row + "</tr>";
+
+                //设置数据
+                for (var i = 0; i < arrData.length; i++) {
+                    var row = "<tr>";
+
+                    for (var index in arrData[i]) {
+                        //判断是否有过滤行
+                        if (filter) {
+                            if (filter.indexOf(index) == -1) {
+                                var value = arrData[i][index] == null ? "" : arrData[i][index];
+                                row += '<td>' + value + '</td>';
+                            }
+                        } else {
+                            var value = arrData[i][index] == null ? "" : arrData[i][index];
+                            row += "<td align='center'>" + value + "</td>";
+                        }
+                    }
+
+                    excel += row + "</tr>";
+                }
+
+                excel += "</table>";
+
+                var excelFile = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:x='urn:schemas-microsoft-com:office:excel' xmlns='http://www.w3.org/TR/REC-html40'>";
+                excelFile += '<meta http-equiv="content-type" content="application/vnd.ms-excel; charset=UTF-8">';
+                excelFile += '<meta http-equiv="content-type" content="application/vnd.ms-excel';
+                excelFile += '; charset=UTF-8">';
+                excelFile += "<head>";
+                excelFile += "<!--[if gte mso 9]>";
+                excelFile += "<xml>";
+                excelFile += "<x:ExcelWorkbook>";
+                excelFile += "<x:ExcelWorksheets>";
+                excelFile += "<x:ExcelWorksheet>";
+                excelFile += "<x:Name>";
+                excelFile += "{worksheet}";
+                excelFile += "</x:Name>";
+                excelFile += "<x:WorksheetOptions>";
+                excelFile += "<x:DisplayGridlines/>";
+                excelFile += "</x:WorksheetOptions>";
+                excelFile += "</x:ExcelWorksheet>";
+                excelFile += "</x:ExcelWorksheets>";
+                excelFile += "</x:ExcelWorkbook>";
+                excelFile += "</xml>";
+                excelFile += "<![endif]-->";
+                excelFile += "</head>";
+                excelFile += "<body>";
+                excelFile += excel;
+                excelFile += "</body>";
+                excelFile += "</html>";
+
+
+                var uri = 'data:application/vnd.ms-excel;charset=utf-8,' + encodeURIComponent(excelFile);
+
+                var link = document.createElement("a");
+                link.href = uri;
+
+                link.style = "visibility:hidden";
+                link.download = FileName + ".xls";
+
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
             },
             dateFormat(date) {
                 let fmt = "YYYY-mm-dd";

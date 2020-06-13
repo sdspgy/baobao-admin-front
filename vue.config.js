@@ -14,7 +14,7 @@ module.exports = {
                 ws: true
             },
             '/mengshen/report': {
-                target: 'http://10.2.81.173:8081',
+                target: 'http://127.0.0.1:8081',
                 ws: true,//如果要代理websockets,配置这个参数
                 // changeOrigin: true,//是否跨域
                 // pathRewrite: {

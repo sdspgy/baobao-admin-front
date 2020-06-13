@@ -114,7 +114,8 @@
                                 this.setStore("currencyRate",  this.games[0].currencyrate);
                                 this.setStore("parentId",  this.games[0].parentid);
                                 this.$emit('sendMsg',  this.games[0].gamename);
-							
+                                this.setStore("gamename",this.games[0],gameName)
+
                         }
                     }
                 });
@@ -129,11 +130,13 @@
                         this.gamesForm.name = item.gamename;
                         this.setStore("currencyRate", item.currencyrate);
                         this.setStore("parentId", item.parentid);
+                        this.setStore("gamename", item.gamename);
+
                     }
                 })
                 this.$emit('sendMsg', this.gamesForm.name)
                 this.$store.commit("clearAllTags");
-                var that = this;            
+                var that = this;
                     that.$router.push({
                         name: 'reportdata',
 						})

@@ -133,8 +133,8 @@
                             </DropdownItem>
                         </DropdownMenu>
                     </Dropdown>
-                    <div style="width:200px;height:50px;line-height:50px;position: absolute;right: 350%">当前所在游戏：<span
-                            style="color: #40a9ff;font-size: 16px;font-weight: bolder">{{gameName}}</span></div>
+                    <div style="width:200px;height:50px;line-height:60px;position: relative;left: -30%">当前所在游戏：<span
+                            style="color: #40a9ff;font-size: 16px">{{gameName}}</span></div>
                     <full-screen v-model="isFullScreen" @on-change="fullscreenChange"></full-screen>
                     <Dropdown @on-click="handleLanDropdown" class="options">
                         <Icon type="md-globe" :size="24" class="language"></Icon>
@@ -266,7 +266,8 @@
             },
             init() {
                 // let i = this.$refs.sum.getGameInfo();
-                // this.gameName = i;
+                this.gameName = this.getStore(gamename);
+                debugger
                 let pathArr = util.setCurrentPath(this, this.$route.name);
                 // this.$store.commit("updateMenulist");
                 if (pathArr.length >= 2) {

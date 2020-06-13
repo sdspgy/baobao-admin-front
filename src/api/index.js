@@ -611,7 +611,7 @@ export const deleteTemplate = (params) => {
 
 /-------任务接口-----------/
 export const queryAllTask = (params) => {
-    return getRequestMinipro('/report/api/task/queryAllTask', params)
+    return postRequestMini('/report/api/task/queryAllTask', params)
 }
 export const queryTemplateResult = (params) => {
     return postRequestMini('/report/api/task/queryTaskResult', params)

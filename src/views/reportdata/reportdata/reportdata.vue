@@ -48,9 +48,11 @@
                     <vTitleHead style="font-size: 16px;font-weight: 500;" :inputName="yesterDayDau"></vTitleHead>
                     <div v-show='nodata' style="height: 130px;line-height: 30px;
             list-style-type:none;margin-top: 10px;margin-left:30px;font-size: 10px;font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif">
-                        <li style="display: inline-flex"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            人数</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>iOS</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>
-                            Android</p></li>
+                        <li style="display: inline-flex">
+                            <p style="width: 80px; text-align: right">人数</p>
+                            <p style="width: 50px; text-align: right">iOS</p>
+                            <p style="width: 70px; text-align: right">Android</p>
+                        </li>
                         <li style="display: inline-flex"><p style="width: 60px;text-align: right">昨日：</p>
                             <p style="width: 50px; text-align: left">{{yesterdayPercentage[0].value}}</p>
                             <p style="width: 50px; text-align: left">{{yesterdayPercentage[0].payRate}}</p>
@@ -73,9 +75,11 @@
                     <vTitleHead style="font-size: 16px;font-weight: 500;" :inputName="weekInstall"></vTitleHead>
                     <div v-show='nodata' style="height: 130px;line-height: 30px;
             list-style-type:none;margin-top: 10px;margin-left:30px;font-size: 10px;font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif">
-                        <li style="display: inline-flex"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            人数</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>iOS</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>
-                            Android</p></li>
+                        <li style="display: inline-flex">
+                            <p style="width: 80px; text-align: right">人数</p>
+                            <p style="width: 50px; text-align: right">iOS</p>
+                            <p style="width: 70px; text-align: right">Android</p>
+                        </li>
                         <li style="display: inline-flex"><p style="width: 60px;text-align: right">昨日：</p>
                             <p style="width: 50px; text-align: left">{{yesterdayPercentage[1].value}}</p>
                             <p style="width: 50px; text-align: left">{{yesterdayPercentage[1].payRate}}</p>
@@ -98,9 +102,12 @@
                     <vTitleHead style="font-size: 16px;font-weight: 500;" :inputName="weekPay"></vTitleHead>
                     <div v-show='nodata' style="height: 130px;line-height: 30px;
             list-style-type:none;margin-top: 10px;font-size: 10px;font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif">
-                        <li style="display: inline-flex"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            人数</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>付费率</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>
-                            ARPU</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>ARPPU</p></li>
+                        <li style="display: inline-flex">
+                            <p style="width: 80px; text-align: right">人数</p>
+                            <p style="width: 60px; text-align: right">付费率</p>
+                            <p style="width: 50px; text-align: right">ARPU</p>
+                            <p style="width: 60px; text-align: right">ARPPU</p>
+                        </li>
                         <li style="display: inline-flex"><p style="width: 60px;text-align: right">昨日：</p>
                             <p style="width: 50px; text-align: left">{{yesterdayPercentage[2].value}}</p>
                             <p style="width: 50px; text-align: left">{{yesterdayPercentage[2].payRate}}</p>
