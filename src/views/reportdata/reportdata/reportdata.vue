@@ -1357,8 +1357,8 @@
                     data.forEach((item) => {
                         activeNum += item.dauNum;
                         newIntall += item.installNum;
-                        payTotal += item.payAmount;
-                        payCount += item.payCount;
+                        payTotal += item.payAmount;//付费总额
+                        payCount += item.payCount;//付费总人数
                     });
                     if (info.length > 0) {
                         let realtimeArray = [];
@@ -1375,7 +1375,7 @@
                         let realtimeObject3 = new Object();
                         realtimeObject3.title = '付费';
 
-                        realtimeObject3.value = payTotal / this.getStore("currencyRate");
+                        realtimeObject3.value = payCount;
                         realtimeObject3.payRate = (activeNum == 0 ? 0 : (payCount * 100 / activeNum).toFixed(2) + '%');
                         realtimeObject3.payARPU = (activeNum == 0 ? 0 : (payTotal / this.getStore("currencyRate") / activeNum).toFixed(2));
                         realtimeObject3.payARPPU = (payCount == 0 ? 0 : (payTotal / this.getStore("currencyRate") / payCount).toFixed(2));

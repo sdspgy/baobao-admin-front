@@ -295,7 +295,6 @@
                 this.template = {}
             },
             pageEvent() {
-                debugger
                 this.queryAllTask()
             },
             selectTemplate() {
@@ -351,17 +350,14 @@
                 }
                 // this.selectTaskModalVisible = false;
                 let param = '';
-                let time = '';
+                let time = this.dateFormat(new Date());
                 for (let item in this.textParams) {
                     param += this.textParams[item].paramEnName + ',' + this.textParams[item].value + ';'
                 }
                 for (let item in this.timeParams) {
                     param += this.timeParams[item].paramEnName + ',' + this.dateFormat(this.timeParams[item].value) + ';'
-                    debugger
                     if (this.timeParams[item].paramEnName === 'ds') {
                         time = this.dateFormat(this.timeParams[item].value)
-                    } else {
-                        time = this.dateFormat(new Time())
                     }
                 }
                 param += 'gameid' + ',' + this.gameid + ';'

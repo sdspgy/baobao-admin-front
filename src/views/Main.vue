@@ -170,7 +170,7 @@
         <div class="single-page-con" :style="{left: shrink?'60px':'220px'}">
             <div class="single-page">
                 <keep-alive :include="cachePage">
-                    <router-view v-on:sendMsg="getInfo"></router-view>
+                    <router-view></router-view>
                 </keep-alive>
             </div>
         </div>
@@ -201,7 +201,7 @@
         },
         data() {
             return {
-                gameName: '',
+                // gameName: '',
                 shrink: false,
                 username: "",
                 userId: "",
@@ -252,6 +252,9 @@
             },
             mesCount() {
                 return this.$store.state.app.messageCount;
+            },
+            gameName() {
+                return this.$store.state.app.gameName;
             }
         },
         stompClient: {
@@ -266,8 +269,7 @@
             },
             init() {
                 // let i = this.$refs.sum.getGameInfo();
-                this.gameName = this.getStore(gamename);
-                debugger
+                this.$store.commit("keepGameName", this.getStore("gamename"));
                 let pathArr = util.setCurrentPath(this, this.$route.name);
                 // this.$store.commit("updateMenulist");
                 if (pathArr.length >= 2) {

@@ -131,6 +131,7 @@
                         this.setStore("currencyRate", item.currencyrate);
                         this.setStore("parentId", item.parentid);
                         this.setStore("gamename", item.gamename);
+                        this.$store.commit("keepGameName", item.gamename);
 
                     }
                 })

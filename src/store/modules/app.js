@@ -1,5 +1,5 @@
-import { otherRouter } from '@/router/router';
-import { router } from '@/router/index';
+import {otherRouter} from '@/router/router';
+import {router} from '@/router/index';
 import Util from '@/libs/util';
 import Cookies from 'js-cookie';
 import Vue from 'vue';
@@ -38,7 +38,8 @@ const app = {
         tagsList: [...otherRouter.children],
         messageCount: 0,
         // 在这里定义你不想要缓存的页面的name属性值(参见路由配置router.js)
-        dontCache: ['test', 'test']
+        dontCache: ['test', 'test'],
+        gameName: ''
     },
     mutations: {
         // 动态添加主界面路由，需要缓存
@@ -168,6 +169,9 @@ const app = {
             }
             state.pageOpenedList.push(tagObj);
             localStorage.pageOpenedList = JSON.stringify(state.pageOpenedList);
+        },
+        keepGameName(state, v) {
+            state.gameName = v;
         }
     }
 };
