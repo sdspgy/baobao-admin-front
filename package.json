@@ -13,7 +13,7 @@
     "@antv/l7": "^2.1.10",
     "@antv/l7-maps": "^2.1.10",
     "apexcharts": "^3.18.1",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "core-js": "^2.6.8",
     "countup": "^1.8.2",
     "cropperjs": "^1.4.1",
